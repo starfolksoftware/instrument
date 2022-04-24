@@ -1,0 +1,93 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    public function up()
+    {
+        Schema::create('documents', function (Blueprint $table) {
+            $table->id();
+
+            $table->unsignedBigInteger('team_id')->nullable();
+
+            // add fields
+            $table->unsignedBigInteger('parent_id');
+            $table->string('number')->nullable()->unique();
+            $table->string('order_number')->nullable();
+            $table->string('state');
+            $table->string('type');
+            $table->dateTime('issued_at');
+            $table->dateTime('due_at');
+
+            $table->json('items');
+            $table->json('taxes');
+            $table->json('totals');
+
+            $table->json('meta');
+
+            $table->timestamps();
+        });
+
+        Schema::create('accounts', function (Blueprint $table) {
+            $table->id();
+
+            $table->unsignedBigInteger('team_id')->nullable();
+
+            $table->string('name');
+            $table->string('number');
+            $table->string('currency_code');
+            $table->double('opening_balance', 15, 4)->default(0.0000);
+
+            $table->json('meta');
+
+            $table->timestamps();
+        });
+
+        Schema::create('transactions', function (Blueprint $table) {
+            $table->id();
+
+            $table->unsignedBigInteger('team_id')->nullable();
+
+            $table->unsignedBigInteger('team_id')->nullable();
+            $table->unsignedBigInteger('account_id')->nullable();
+            $table->unsignedBigInteger('document_id')->nullable();
+
+            $table->string('payment_method')->nullable();
+            $table->dateTime('paid_at');
+            $table->double('amount', 15, 4);
+
+            $table->json('meta');
+
+            $table->timestamps();
+        });
+
+        Schema::create('reconciliations', function (Blueprint $table) {
+            $table->id();
+
+            $table->unsignedBigInteger('team_id')->nullable();
+
+            $table->unsignedBigInteger('account_id');
+            $table->dateTime('from');
+            $table->dateTime('to');
+            $table->double('closing_balance', 15, 4)->default(0.0000);
+            
+            $table->json('meta');
+
+            $table->timestamps();
+        });
+
+        Schema::create('reconciliation_transaction', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('reconciliation_id');
+            $table->unsignedBigInteger('transaction_id');
+            $table->boolean('reconciled')->default(false);
+            $table->timestamps();
+
+            $table->foreign('reconciliation_id')->references('id')->on('reconciliations')->onDelete('cascade');
+            $table->foreign('transaction_id')->references('id')->on('transactions')->onDelete('cascade');
+        });
+    }
+};
