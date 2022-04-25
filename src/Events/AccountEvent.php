@@ -6,7 +6,7 @@ use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 
-abstract class DocumentEvent
+abstract class AccountEvent
 {
     use Dispatchable;
     use InteractsWithSockets;
@@ -16,13 +16,13 @@ abstract class DocumentEvent
      * Create a new event instance.
      *
      * @param  mixed  $user
-     * @param  mixed  $document
+     * @param  mixed  $account
      * @param  array  $data
      * @return void
      */
     public function __construct(
         public $user = null,
-        public $document = null,
+        public $account = null,
         public $data = []
     ) {
     }

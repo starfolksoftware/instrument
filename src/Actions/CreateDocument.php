@@ -52,7 +52,7 @@ class CreateDocument implements CreatesDocuments
             Instrument::findTeamByIdOrFail($teamId)->documents()->create($fields) :
             Instrument::newDocumentModel()->create($fields);
 
-        event(new DocumentCreated(user: $user, document: $document));
+        event(new DocumentCreated(document: $document));
 
         return $document;
     }

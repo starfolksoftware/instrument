@@ -2,8 +2,11 @@
 
 namespace StarfolkSoftware\Instrument;
 
+use StarfolkSoftware\Instrument\Contracts\CreatesAccounts;
 use StarfolkSoftware\Instrument\Contracts\CreatesDocuments;
+use StarfolkSoftware\Instrument\Contracts\DeletesAccounts;
 use StarfolkSoftware\Instrument\Contracts\DeletesDocuments;
+use StarfolkSoftware\Instrument\Contracts\UpdatesAccounts;
 use StarfolkSoftware\Instrument\Contracts\UpdatesDocuments;
 
 final class Instrument
@@ -30,6 +33,13 @@ final class Instrument
     public static $documentModel = 'StarfolkSoftware\\Instrument\\Document';
 
     /**
+     * The account model that should be used by Instrument.
+     *
+     * @var string
+     */
+    public static $accountModel = 'StarfolkSoftware\\Instrument\\Account';
+
+    /**
      * Indicates if Instrument should support teams.
      *
      * @var bool
@@ -44,7 +54,7 @@ final class Instrument
     public static $teamModel;
 
     /**
-     * Get the name of the document model used by the application.
+     * Get the name of the team model used by the application.
      *
      * @return string
      */
@@ -125,7 +135,42 @@ final class Instrument
     }
 
     /**
-     * Register a class / callback that should be used to create documentes.
+     * Get the name of the account model used by the application.
+     *
+     * @return string
+     */
+    public static function accountModel()
+    {
+        return static::$accountModel;
+    }
+
+    /**
+     * Get a new instance of the account model.
+     *
+     * @return mixed
+     */
+    public static function newAccountModel()
+    {
+        $model = static::accountModel();
+
+        return new $model();
+    }
+
+    /**
+     * Specify the account model that should be used by Instrument.
+     *
+     * @param  string  $model
+     * @return static
+     */
+    public static function useAccountModel(string $model)
+    {
+        static::$accountModel = $model;
+
+        return new static();
+    }
+
+    /**
+     * Register a class / callback that should be used to create documents.
      *
      * @param  string  $class
      * @return void
@@ -136,7 +181,7 @@ final class Instrument
     }
 
     /**
-     * Register a class / callback that should be used to update documentes.
+     * Register a class / callback that should be used to update documents.
      *
      * @param  string  $class
      * @return void
@@ -147,7 +192,7 @@ final class Instrument
     }
 
     /**
-     * Register a class / callback that should be used to delete documentes.
+     * Register a class / callback that should be used to delete documents.
      *
      * @param  string  $class
      * @return void
@@ -155,6 +200,39 @@ final class Instrument
     public static function deleteDocumentsUsing(string $class)
     {
         app()->singleton(DeletesDocuments::class, $class);
+    }
+
+    /**
+     * Register a class / callback that should be used to create accounts.
+     *
+     * @param  string  $class
+     * @return void
+     */
+    public static function createAccountsUsing(string $class)
+    {
+        app()->singleton(CreatesAccounts::class, $class);
+    }
+
+    /**
+     * Register a class / callback that should be used to update accounts.
+     *
+     * @param  string  $class
+     * @return void
+     */
+    public static function updateAccountsUsing(string $class)
+    {
+        app()->singleton(UpdatesAccounts::class, $class);
+    }
+
+    /**
+     * Register a class / callback that should be used to delete accounts.
+     *
+     * @param  string  $class
+     * @return void
+     */
+    public static function deleteAccountsUsing(string $class)
+    {
+        app()->singleton(DeletesAccounts::class, $class);
     }
 
     /**
