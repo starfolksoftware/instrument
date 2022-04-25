@@ -14,7 +14,7 @@ return new class extends Migration
             $table->unsignedBigInteger('team_id')->nullable();
 
             // add fields
-            $table->unsignedBigInteger('parent_id');
+            $table->unsignedBigInteger('parent_id')->nullable();
             $table->string('number')->nullable()->unique();
             $table->string('order_number')->nullable();
             $table->string('state');
@@ -23,10 +23,9 @@ return new class extends Migration
             $table->dateTime('due_at');
 
             $table->json('items');
-            $table->json('taxes');
             $table->json('totals');
 
-            $table->json('meta');
+            $table->json('meta')->nullable();
 
             $table->timestamps();
         });
@@ -41,7 +40,7 @@ return new class extends Migration
             $table->string('currency_code');
             $table->double('opening_balance', 15, 4)->default(0.0000);
 
-            $table->json('meta');
+            $table->json('meta')->nullable();
 
             $table->timestamps();
         });
@@ -51,7 +50,6 @@ return new class extends Migration
 
             $table->unsignedBigInteger('team_id')->nullable();
 
-            $table->unsignedBigInteger('team_id')->nullable();
             $table->unsignedBigInteger('account_id')->nullable();
             $table->unsignedBigInteger('document_id')->nullable();
 
@@ -59,7 +57,7 @@ return new class extends Migration
             $table->dateTime('paid_at');
             $table->double('amount', 15, 4);
 
-            $table->json('meta');
+            $table->json('meta')->nullable();
 
             $table->timestamps();
         });
@@ -74,7 +72,7 @@ return new class extends Migration
             $table->dateTime('to');
             $table->double('closing_balance', 15, 4)->default(0.0000);
             
-            $table->json('meta');
+            $table->json('meta')->nullable();
 
             $table->timestamps();
         });
