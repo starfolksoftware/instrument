@@ -3,6 +3,7 @@
 use Illuminate\Contracts\Auth\Authenticatable;
 use StarfolkSoftware\Instrument\Tests\Mocks\Account;
 use StarfolkSoftware\Instrument\Tests\Mocks\Document;
+use StarfolkSoftware\Instrument\Tests\Mocks\Transaction;
 use StarfolkSoftware\Instrument\Tests\TestCase;
 
 uses(TestCase::class)->in(__DIR__);
@@ -35,4 +36,14 @@ function documentFields()
 function accountFields()
 {
     return Account::factory()->raw();
+}
+
+/**
+ * Returns transaction fields.
+ *
+ * @return array
+ */
+function transactionFields()
+{
+    return Transaction::factory()->raw();
 }

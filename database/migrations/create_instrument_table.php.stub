@@ -52,39 +52,13 @@ return new class extends Migration
             $table->unsignedBigInteger('account_id')->nullable();
             $table->unsignedBigInteger('document_id')->nullable();
 
+            $table->double('amount', 15, 4);
             $table->string('payment_method')->nullable();
             $table->dateTime('paid_at');
-            $table->double('amount', 15, 4);
 
             $table->json('meta')->nullable();
 
             $table->timestamps();
-        });
-
-        Schema::create('reconciliations', function (Blueprint $table) {
-            $table->id();
-
-            $table->unsignedBigInteger('team_id')->nullable();
-
-            $table->unsignedBigInteger('account_id');
-            $table->dateTime('from');
-            $table->dateTime('to');
-            $table->double('closing_balance', 15, 4)->default(0.0000);
-            
-            $table->json('meta')->nullable();
-
-            $table->timestamps();
-        });
-
-        Schema::create('reconciliation_transaction', function (Blueprint $table) {
-            $table->id();
-            $table->unsignedBigInteger('reconciliation_id');
-            $table->unsignedBigInteger('transaction_id')->unique();
-            $table->boolean('reconciled')->default(false);
-            $table->timestamps();
-
-            $table->foreign('reconciliation_id')->references('id')->on('reconciliations')->onDelete('cascade');
-            $table->foreign('transaction_id')->references('id')->on('transactions')->onDelete('cascade');
         });
     }
 };

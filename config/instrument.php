@@ -20,5 +20,10 @@ return [
             'update' => 'accounts.update',
             'destroy' => 'accounts.destroy',
         ],
+        'transactions' => [
+            'store' => 'transactions.store',
+            'update' => 'transactions.update',
+            'destroy' => 'transactions.destroy',
+        ],
     ],
 ];

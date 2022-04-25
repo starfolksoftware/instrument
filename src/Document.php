@@ -15,4 +15,14 @@ abstract class Document extends Model
     {
         return $this->belongsTo(Instrument::$teamModel, 'team_id');
     }
+
+    /**
+     * The transactions that belong to the document.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function transactions()
+    {
+        return $this->hasMany(Instrument::$transactionModel, 'document_id');
+    }
 }
