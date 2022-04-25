@@ -37,7 +37,6 @@ return new class extends Migration
 
             $table->string('name');
             $table->string('number');
-            $table->string('currency_code');
             $table->double('opening_balance', 15, 4)->default(0.0000);
 
             $table->json('meta')->nullable();
@@ -80,7 +79,7 @@ return new class extends Migration
         Schema::create('reconciliation_transaction', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('reconciliation_id');
-            $table->unsignedBigInteger('transaction_id');
+            $table->unsignedBigInteger('transaction_id')->unique();
             $table->boolean('reconciled')->default(false);
             $table->timestamps();
 

@@ -17,7 +17,7 @@ class DeleteDocument implements DeletesDocuments
      */
     public function __invoke($user, $document)
     {
-        event(new DeletingDocument(user: $user, document: $document));
+        event(new DeletingDocument($user, document: $document));
 
         $document->delete();
 

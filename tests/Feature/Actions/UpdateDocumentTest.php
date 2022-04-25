@@ -1,6 +1,9 @@
 <?php
 
+use Illuminate\Support\Facades\Event;
 use StarfolkSoftware\Instrument\Contracts\UpdatesDocuments;
+use StarfolkSoftware\Instrument\Events\DocumentUpdated;
+use StarfolkSoftware\Instrument\Events\UpdatingDocument;
 use StarfolkSoftware\Instrument\Tests\Mocks\Document;
 use StarfolkSoftware\Instrument\Tests\Mocks\TestUser;
 
@@ -9,6 +12,8 @@ beforeAll(function () {
 });
 
 it('can update a document', function () {
+    Event::fake();
+
     $updatesDocuments = app(UpdatesDocuments::class);
 
     $user = TestUser::first();
@@ -22,6 +27,9 @@ it('can update a document', function () {
         $document,
         $fields
     );
+
+    Event::assertDispatched(UpdatingDocument::class);
+    Event::assertDispatched(DocumentUpdated::class);
 
     expect($document->parent_id)->toBe($fields['parent_id']);
     expect($document->type)->toBe($fields['type']);

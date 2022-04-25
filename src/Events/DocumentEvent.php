@@ -21,7 +21,7 @@ abstract class DocumentEvent
      * @return void
      */
     public function __construct(
-        public $user,
+        public $user = null,
         public $document = null,
         public $data = []
     ) {
