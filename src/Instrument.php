@@ -34,7 +34,7 @@ final class Instrument
 
     /**
      * The account model that should be used by Instrument.
-     * 
+     *
      * @var string
      */
     public static $accountModel = 'StarfolkSoftware\\Instrument\\Account';

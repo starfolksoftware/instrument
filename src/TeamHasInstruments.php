@@ -16,7 +16,7 @@ trait TeamHasInstruments
 
     /**
      * Get the accounts for the team.
-     * 
+     *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function accounts()

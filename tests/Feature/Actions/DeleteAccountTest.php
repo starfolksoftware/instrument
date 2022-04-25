@@ -2,8 +2,8 @@
 
 use Illuminate\Support\Facades\Event;
 use StarfolkSoftware\Instrument\Contracts\DeletesAccounts;
-use StarfolkSoftware\Instrument\Events\DeletingAccount;
 use StarfolkSoftware\Instrument\Events\AccountDeleted;
+use StarfolkSoftware\Instrument\Events\DeletingAccount;
 use StarfolkSoftware\Instrument\Tests\Mocks\Account;
 use StarfolkSoftware\Instrument\Tests\Mocks\TestUser;
 

@@ -4,8 +4,8 @@ namespace StarfolkSoftware\Instrument\Actions;
 
 use Illuminate\Support\Facades\Validator;
 use StarfolkSoftware\Instrument\Contracts\CreatesAccounts;
-use StarfolkSoftware\Instrument\Events\CreatingAccount;
 use StarfolkSoftware\Instrument\Events\AccountCreated;
+use StarfolkSoftware\Instrument\Events\CreatingAccount;
 use StarfolkSoftware\Instrument\Instrument;
 
 class CreateAccount implements CreatesAccounts

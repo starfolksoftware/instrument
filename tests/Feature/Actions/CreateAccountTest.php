@@ -2,8 +2,8 @@
 
 use Illuminate\Support\Facades\Event;
 use StarfolkSoftware\Instrument\Contracts\CreatesAccounts;
-use StarfolkSoftware\Instrument\Events\CreatingAccount;
 use StarfolkSoftware\Instrument\Events\AccountCreated;
+use StarfolkSoftware\Instrument\Events\CreatingAccount;
 use StarfolkSoftware\Instrument\Tests\Mocks\Account;
 use StarfolkSoftware\Instrument\Tests\Mocks\TestUser;
 

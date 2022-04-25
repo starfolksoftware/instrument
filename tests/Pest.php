@@ -29,7 +29,7 @@ function documentFields()
 
 /**
  * Returns account fields.
- * 
+ *
  * @return array
  */
 function accountFields()
