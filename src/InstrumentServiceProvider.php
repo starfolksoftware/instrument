@@ -4,7 +4,10 @@ namespace StarfolkSoftware\Instrument;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use StarfolkSoftware\Instrument\Commands\InstrumentCommand;
+use StarfolkSoftware\Instrument\Actions\CreateDocument;
+use StarfolkSoftware\Instrument\Actions\DeleteDocument;
+use StarfolkSoftware\Instrument\Actions\UpdateDocument;
+use StarfolkSoftware\Instrument\Commands\InstallCommand;
 
 class InstrumentServiceProvider extends PackageServiceProvider
 {
@@ -18,8 +21,23 @@ class InstrumentServiceProvider extends PackageServiceProvider
         $package
             ->name('instrument')
             ->hasConfigFile()
-            ->hasViews()
-            ->hasMigration('create_instrument_table')
-            ->hasCommand(InstrumentCommand::class);
+            ->hasCommand(InstallCommand::class);
+
+        if (Instrument::$runsMigrations) {
+            $package->hasMigration('create_instrument_table');
+        }
+
+        if (Instrument::$registersRoutes) {
+            $package->hasRoutes('web');
+        }
+    }
+
+    public function packageRegistered()
+    {
+        Instrument::createDocumentsUsing(CreateDocument::class);
+
+        Instrument::updateDocumentsUsing(UpdateDocument::class);
+
+        Instrument::deleteDocumentsUsing(DeleteDocument::class);
     }
 }
