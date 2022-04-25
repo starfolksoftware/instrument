@@ -23,4 +23,14 @@ trait TeamHasInstruments
     {
         return $this->hasMany(Instrument::$accountModel, 'team_id');
     }
+
+    /**
+     * Get the transactions for the team.
+     * 
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function transactions()
+    {
+        return $this->hasMany(Instrument::$transactionModel, 'team_id');
+    }
 }

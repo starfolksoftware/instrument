@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use App\Models\Account;
 use App\Models\Document;
+use App\Models\Transaction;
 use Illuminate\Support\ServiceProvider;
 use StarfolkSoftware\Instrument\Actions\CreateDocument;
 use StarfolkSoftware\Instrument\Actions\DeleteDocument;
@@ -35,5 +37,9 @@ class InstrumentServiceProvider extends ServiceProvider
         Instrument::deleteDocumentsUsing(DeleteDocument::class);
 
         Instrument::useDocumentModel(Document::class);
+
+        Instrument::useAccountModel(Account::class);
+
+        Instrument::useTransactionModel(Transaction::class);
     }
 }

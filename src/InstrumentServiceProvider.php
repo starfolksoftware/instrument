@@ -6,10 +6,13 @@ use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 use StarfolkSoftware\Instrument\Actions\CreateAccount;
 use StarfolkSoftware\Instrument\Actions\CreateDocument;
+use StarfolkSoftware\Instrument\Actions\CreateTransaction;
 use StarfolkSoftware\Instrument\Actions\DeleteAccount;
 use StarfolkSoftware\Instrument\Actions\DeleteDocument;
+use StarfolkSoftware\Instrument\Actions\DeleteTransaction;
 use StarfolkSoftware\Instrument\Actions\UpdateAccount;
 use StarfolkSoftware\Instrument\Actions\UpdateDocument;
+use StarfolkSoftware\Instrument\Actions\UpdateTransaction;
 use StarfolkSoftware\Instrument\Commands\InstallCommand;
 
 class InstrumentServiceProvider extends PackageServiceProvider
@@ -48,5 +51,11 @@ class InstrumentServiceProvider extends PackageServiceProvider
         Instrument::updateAccountsUsing(UpdateAccount::class);
 
         Instrument::deleteAccountsUsing(DeleteAccount::class);
+
+        Instrument::createTransactionsUsing(CreateTransaction::class);
+
+        Instrument::updateTransactionsUsing(UpdateTransaction::class);
+
+        Instrument::deleteTransactionsUsing(DeleteTransaction::class);
     }
 }

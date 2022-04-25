@@ -4,10 +4,13 @@ namespace StarfolkSoftware\Instrument;
 
 use StarfolkSoftware\Instrument\Contracts\CreatesAccounts;
 use StarfolkSoftware\Instrument\Contracts\CreatesDocuments;
+use StarfolkSoftware\Instrument\Contracts\CreatesTransactions;
 use StarfolkSoftware\Instrument\Contracts\DeletesAccounts;
 use StarfolkSoftware\Instrument\Contracts\DeletesDocuments;
+use StarfolkSoftware\Instrument\Contracts\DeletesTransactions;
 use StarfolkSoftware\Instrument\Contracts\UpdatesAccounts;
 use StarfolkSoftware\Instrument\Contracts\UpdatesDocuments;
+use StarfolkSoftware\Instrument\Contracts\UpdatesTransactions;
 
 final class Instrument
 {
@@ -38,6 +41,13 @@ final class Instrument
      * @var string
      */
     public static $accountModel = 'StarfolkSoftware\\Instrument\\Account';
+
+    /**
+     * The transaction model that should be used by Instrument.
+     * 
+     * @var string
+     */
+    public static $transactionModel = 'StarfolkSoftware\\Instrument\\Transaction';
 
     /**
      * Indicates if Instrument should support teams.
@@ -170,6 +180,41 @@ final class Instrument
     }
 
     /**
+     * Get the name of the transaction model used by the application.
+     *
+     * @return string
+     */
+    public static function transactionModel()
+    {
+        return static::$transactionModel;
+    }
+
+    /**
+     * Get a new instance of the transaction model.
+     *
+     * @return mixed
+     */
+    public static function newTransactionModel()
+    {
+        $model = static::transactionModel();
+
+        return new $model();
+    }
+
+    /**
+     * Specify the transaction model that should be used by Instrument.
+     *
+     * @param  string  $model
+     * @return static
+     */
+    public static function useTransactionModel(string $model)
+    {
+        static::$transactionModel = $model;
+
+        return new static();
+    }
+
+    /**
      * Register a class / callback that should be used to create documents.
      *
      * @param  string  $class
@@ -233,6 +278,39 @@ final class Instrument
     public static function deleteAccountsUsing(string $class)
     {
         app()->singleton(DeletesAccounts::class, $class);
+    }
+
+    /**
+     * Register a class / callback that should be used to create transactions.
+     *
+     * @param  string  $class
+     * @return void
+     */
+    public static function createTransactionsUsing(string $class)
+    {
+        app()->singleton(CreatesTransactions::class, $class);
+    }
+
+    /**
+     * Register a class / callback that should be used to update transactions.
+     *
+     * @param  string  $class
+     * @return void
+     */
+    public static function updateTransactionsUsing(string $class)
+    {
+        app()->singleton(UpdatesTransactions::class, $class);
+    }
+
+    /**
+     * Register a class / callback that should be used to delete transactions.
+     *
+     * @param  string  $class
+     * @return void
+     */
+    public static function deleteTransactionsUsing(string $class)
+    {
+        app()->singleton(DeletesTransactions::class, $class);
     }
 
     /**

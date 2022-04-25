@@ -15,4 +15,14 @@ abstract class Account extends Model
     {
         return $this->belongsTo(Instrument::$teamModel, 'team_id');
     }
+
+    /**
+     * The transactions that belong to the account.
+     * 
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function transactions()
+    {
+        return $this->hasMany(Instrument::$transactionModel, 'account_id');
+    }
 }
