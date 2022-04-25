@@ -6,7 +6,6 @@ use StarfolkSoftware\Instrument\Contracts\CreatesDocuments;
 use StarfolkSoftware\Instrument\Contracts\DeletesDocuments;
 use StarfolkSoftware\Instrument\Contracts\UpdatesDocuments;
 use StarfolkSoftware\Instrument\Instrument;
-use StarfolkSoftware\Instrument\Document;
 
 class DocumentController extends Controller
 {
@@ -38,7 +37,7 @@ class DocumentController extends Controller
     public function update($document, UpdatesDocuments $updatesDocuments)
     {
         $document = Instrument::newDocumentModel()->findOrFail($document);
-        
+
         $document = $updatesDocuments(
             request()->user(),
             $document,

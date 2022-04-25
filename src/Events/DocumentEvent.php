@@ -8,7 +8,9 @@ use Illuminate\Queue\SerializesModels;
 
 abstract class DocumentEvent
 {
-    use Dispatchable, InteractsWithSockets, SerializesModels;
+    use Dispatchable;
+    use InteractsWithSockets;
+    use SerializesModels;
 
     /**
      * Create a new event instance.
@@ -19,11 +21,9 @@ abstract class DocumentEvent
      * @return void
      */
     public function __construct(
-        public $user, 
+        public $user,
         public $document = null,
         public $data = []
-    )
-    {
-        
+    ) {
     }
 }
