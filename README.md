@@ -26,13 +26,6 @@ php artisan vendor:publish --tag="instrument-config"
 This is the contents of the published config file:
 
 ```php
-return [
-];
-```
-
-## Usage
-
-```php
 // config for StarfolkSoftware/Instrument
 return [
     'middleware' => ['web'],
@@ -61,6 +54,12 @@ return [
         ],
     ],
 ];
+```
+
+## Usage
+
+```php
+
 ```
 
 ## Testing
