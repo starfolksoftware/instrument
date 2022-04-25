@@ -16,7 +16,7 @@ it('can delete a document', function () {
     $user = TestUser::first();
 
     $document = Document::factory()->create();
-    
+
     $deletesDocuments($user, $document);
 
     expect(Document::count())->toEqual(0);

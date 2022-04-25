@@ -18,7 +18,7 @@ function actingAs(Authenticatable $user, string $driver = null)
 
 /**
  * Returns document fields.
- * 
+ *
  * @return array
  */
 function documentFields()

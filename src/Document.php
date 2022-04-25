@@ -8,7 +8,7 @@ abstract class Document extends Model
 {
     /**
      * The team that owns the document.
-     * 
+     *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function team()
