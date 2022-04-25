@@ -4,8 +4,11 @@ namespace StarfolkSoftware\Instrument;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
+use StarfolkSoftware\Instrument\Actions\CreateAccount;
 use StarfolkSoftware\Instrument\Actions\CreateDocument;
+use StarfolkSoftware\Instrument\Actions\DeleteAccount;
 use StarfolkSoftware\Instrument\Actions\DeleteDocument;
+use StarfolkSoftware\Instrument\Actions\UpdateAccount;
 use StarfolkSoftware\Instrument\Actions\UpdateDocument;
 use StarfolkSoftware\Instrument\Commands\InstallCommand;
 
@@ -39,5 +42,11 @@ class InstrumentServiceProvider extends PackageServiceProvider
         Instrument::updateDocumentsUsing(UpdateDocument::class);
 
         Instrument::deleteDocumentsUsing(DeleteDocument::class);
+
+        Instrument::createAccountsUsing(CreateAccount::class);
+
+        Instrument::updateAccountsUsing(UpdateAccount::class);
+
+        Instrument::deleteAccountsUsing(DeleteAccount::class);
     }
 }

@@ -24,6 +24,7 @@ class InstallCommand extends Command
 
         // Models...
         copy(__DIR__.'/../../stubs/app/Models/Document.php', app_path('Models/Document.php'));
+        copy(__DIR__.'/../../stubs/app/Models/Account.php', app_path('Models/Account.php'));
 
         // Service Providers...
         copy(__DIR__.'/../../stubs/app/Providers/InstrumentServiceProvider.php', app_path('Providers/InstrumentServiceProvider.php'));

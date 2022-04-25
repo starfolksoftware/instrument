@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Contracts\Auth\Authenticatable;
+use StarfolkSoftware\Instrument\Tests\Mocks\Account;
 use StarfolkSoftware\Instrument\Tests\Mocks\Document;
 use StarfolkSoftware\Instrument\Tests\TestCase;
 
@@ -24,4 +25,14 @@ function actingAs(Authenticatable $user, string $driver = null)
 function documentFields()
 {
     return Document::factory()->raw();
+}
+
+/**
+ * Returns account fields.
+ * 
+ * @return array
+ */
+function accountFields()
+{
+    return Account::factory()->raw();
 }
