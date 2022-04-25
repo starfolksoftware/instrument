@@ -6,7 +6,7 @@ use StarfolkSoftware\Instrument\Contracts\CreatesDocuments;
 use StarfolkSoftware\Instrument\Contracts\DeletesDocuments;
 use StarfolkSoftware\Instrument\Contracts\UpdatesDocuments;
 
-class Instrument
+final class Instrument
 {
     /**
      * Indicates if Instrument routes will be registered.
