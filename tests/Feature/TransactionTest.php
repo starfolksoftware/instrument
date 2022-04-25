@@ -1,14 +1,14 @@
 <?php
 
 use Illuminate\Support\Facades\Event;
+use StarfolkSoftware\Instrument\Events\CreatingTransaction;
+use StarfolkSoftware\Instrument\Events\DeletingTransaction;
 use StarfolkSoftware\Instrument\Events\TransactionCreated;
 use StarfolkSoftware\Instrument\Events\TransactionDeleted;
 use StarfolkSoftware\Instrument\Events\TransactionUpdated;
-use StarfolkSoftware\Instrument\Events\CreatingTransaction;
-use StarfolkSoftware\Instrument\Events\DeletingTransaction;
 use StarfolkSoftware\Instrument\Events\UpdatingTransaction;
-use StarfolkSoftware\Instrument\Tests\Mocks\Transaction;
 use StarfolkSoftware\Instrument\Tests\Mocks\TestUser;
+use StarfolkSoftware\Instrument\Tests\Mocks\Transaction;
 
 beforeAll(function () {
     \StarfolkSoftware\Instrument\Instrument::supportsTeams(false);

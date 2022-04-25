@@ -4,8 +4,8 @@ namespace StarfolkSoftware\Instrument\Actions;
 
 use Illuminate\Support\Facades\Validator;
 use StarfolkSoftware\Instrument\Contracts\CreatesTransactions;
-use StarfolkSoftware\Instrument\Events\TransactionCreated;
 use StarfolkSoftware\Instrument\Events\CreatingTransaction;
+use StarfolkSoftware\Instrument\Events\TransactionCreated;
 use StarfolkSoftware\Instrument\Instrument;
 
 class CreateTransaction implements CreatesTransactions

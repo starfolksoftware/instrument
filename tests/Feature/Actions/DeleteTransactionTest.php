@@ -2,10 +2,10 @@
 
 use Illuminate\Support\Facades\Event;
 use StarfolkSoftware\Instrument\Contracts\DeletesTransactions;
-use StarfolkSoftware\Instrument\Events\TransactionDeleted;
 use StarfolkSoftware\Instrument\Events\DeletingTransaction;
-use StarfolkSoftware\Instrument\Tests\Mocks\Transaction;
+use StarfolkSoftware\Instrument\Events\TransactionDeleted;
 use StarfolkSoftware\Instrument\Tests\Mocks\TestUser;
+use StarfolkSoftware\Instrument\Tests\Mocks\Transaction;
 
 beforeAll(function () {
     \StarfolkSoftware\Instrument\Instrument::supportsTeams(false);

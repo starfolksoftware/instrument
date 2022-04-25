@@ -2,12 +2,12 @@
 
 use Illuminate\Support\Facades\Event;
 use StarfolkSoftware\Instrument\Contracts\CreatesTransactions;
-use StarfolkSoftware\Instrument\Events\TransactionCreated;
 use StarfolkSoftware\Instrument\Events\CreatingTransaction;
+use StarfolkSoftware\Instrument\Events\TransactionCreated;
 use StarfolkSoftware\Instrument\Instrument;
-use StarfolkSoftware\Instrument\Tests\Mocks\Transaction;
 use StarfolkSoftware\Instrument\Tests\Mocks\TeamModel;
 use StarfolkSoftware\Instrument\Tests\Mocks\TestUser;
+use StarfolkSoftware\Instrument\Tests\Mocks\Transaction;
 
 beforeAll(function () {
     Instrument::supportsTeams(true);

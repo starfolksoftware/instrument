@@ -18,7 +18,7 @@ abstract class Account extends Model
 
     /**
      * The transactions that belong to the account.
-     * 
+     *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function transactions()

@@ -3,10 +3,10 @@
 namespace StarfolkSoftware\Instrument\Tests\Mocks;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use StarfolkSoftware\Instrument\Transaction as InstrumentTransaction;
 use StarfolkSoftware\Instrument\Events\TransactionCreated;
 use StarfolkSoftware\Instrument\Events\TransactionDeleted;
 use StarfolkSoftware\Instrument\Events\TransactionUpdated;
+use StarfolkSoftware\Instrument\Transaction as InstrumentTransaction;
 
 class Transaction extends InstrumentTransaction
 {
@@ -30,7 +30,7 @@ class Transaction extends InstrumentTransaction
         'amount',
         'payment_method',
         'paid_at',
-        'meta'
+        'meta',
     ];
 
     /**

@@ -3,8 +3,8 @@
 namespace StarfolkSoftware\Instrument\Actions;
 
 use StarfolkSoftware\Instrument\Contracts\DeletesTransactions;
-use StarfolkSoftware\Instrument\Events\TransactionDeleted;
 use StarfolkSoftware\Instrument\Events\DeletingTransaction;
+use StarfolkSoftware\Instrument\Events\TransactionDeleted;
 
 class DeleteTransaction implements DeletesTransactions
 {

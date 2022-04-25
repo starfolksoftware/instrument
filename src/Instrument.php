@@ -44,7 +44,7 @@ final class Instrument
 
     /**
      * The transaction model that should be used by Instrument.
-     * 
+     *
      * @var string
      */
     public static $transactionModel = 'StarfolkSoftware\\Instrument\\Transaction';

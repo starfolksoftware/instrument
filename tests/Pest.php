@@ -40,7 +40,7 @@ function accountFields()
 
 /**
  * Returns transaction fields.
- * 
+ *
  * @return array
  */
 function transactionFields()

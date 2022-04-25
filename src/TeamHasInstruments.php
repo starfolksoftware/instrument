@@ -26,7 +26,7 @@ trait TeamHasInstruments
 
     /**
      * Get the transactions for the team.
-     * 
+     *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function transactions()

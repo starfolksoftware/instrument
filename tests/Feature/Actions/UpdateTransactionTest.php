@@ -4,8 +4,8 @@ use Illuminate\Support\Facades\Event;
 use StarfolkSoftware\Instrument\Contracts\UpdatesTransactions;
 use StarfolkSoftware\Instrument\Events\TransactionUpdated;
 use StarfolkSoftware\Instrument\Events\UpdatingTransaction;
-use StarfolkSoftware\Instrument\Tests\Mocks\Transaction;
 use StarfolkSoftware\Instrument\Tests\Mocks\TestUser;
+use StarfolkSoftware\Instrument\Tests\Mocks\Transaction;
 
 beforeAll(function () {
     \StarfolkSoftware\Instrument\Instrument::supportsTeams(false);

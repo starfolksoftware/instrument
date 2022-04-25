@@ -15,7 +15,7 @@ class TransactionFactory extends Factory
             'account_id' => null,
             'document_id' => null,
             'amount' => $this->faker->randomFloat(2, 0, 100),
-            'payment_method' =>  $this->faker->randomElement(['cash', 'credit_card', 'debit_card']),
+            'payment_method' => $this->faker->randomElement(['cash', 'credit_card', 'debit_card']),
             'paid_at' => now(),
             'meta' => [
                 'foo' => $this->faker->word,

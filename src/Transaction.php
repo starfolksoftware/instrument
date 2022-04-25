@@ -18,7 +18,7 @@ abstract class Transaction extends Model
 
     /**
      * The account that owns the transaction.
-     * 
+     *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function account()
@@ -28,7 +28,7 @@ abstract class Transaction extends Model
 
     /**
      * The document that owns the transaction.
-     * 
+     *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function document()
@@ -38,7 +38,7 @@ abstract class Transaction extends Model
 
     /**
      * Scope a query to only include transactions for the given payment method.
-     * 
+     *
      * @param  \Illuminate\Database\Eloquent\Builder  $query
      * @param  string  $paymentMethod
      * @return \Illuminate\Database\Eloquent\Builder

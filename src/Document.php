@@ -18,7 +18,7 @@ abstract class Document extends Model
 
     /**
      * The transactions that belong to the document.
-     * 
+     *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function transactions()
