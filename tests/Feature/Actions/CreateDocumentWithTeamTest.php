@@ -10,6 +10,8 @@ beforeAll(function () {
     Instrument::supportsTeams(true);
 
     Instrument::useDocumentModel(Document::class);
+
+    Instrument::useTeamModel(TeamModel::class);
 });
 
 it('can create a document with team support', function () {
@@ -17,22 +19,22 @@ it('can create a document with team support', function () {
 
     Instrument::supportsTeams();
 
-    Instrument::useTeamModel(TeamModel::class);
-
     $createsDocuments = app(CreatesDocuments::class);
 
     $user = TestUser::first();
 
+    $fields = documentFields();
+
     $document = $createsDocuments(
         $user,
-        documentFields(),
+        $fields,
         $team->id,
     );
 
     $document = $document->refresh();
 
-    expect($document->parent_id)->toBe(documentFields()['parent_id']);
-    expect($document->type)->toBe(documentFields()['type']);
+    expect($document->parent_id)->toBe($fields['parent_id']);
+    expect($document->type)->toBe($fields['type']);
 
     expect($document->team)
         ->id->toBe($team->id)

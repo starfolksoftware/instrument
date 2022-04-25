@@ -86,7 +86,7 @@ class Instrument
      */
     public static function findTeamByIdOrFail($id)
     {
-        return static::newteamModel()->whereId($id)->firstOrFail();
+        return static::newTeamModel()->whereId($id)->firstOrFail();
     }
 
     /**

@@ -41,7 +41,7 @@ class DocumentFactory extends Factory
         ];
 
         if (Instrument::$supportsTeams) {
-            $defs['team_id'] = Instrument::newTeamModel()->factory();
+            $defs['team_id'] = 1;
         }
 
         return $defs;

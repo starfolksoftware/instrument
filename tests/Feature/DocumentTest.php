@@ -1,5 +1,6 @@
 <?php
 
+use StarfolkSoftware\Instrument\Instrument;
 use StarfolkSoftware\Instrument\Tests\Mocks\Document;
 use StarfolkSoftware\Instrument\Tests\Mocks\TestUser;
 

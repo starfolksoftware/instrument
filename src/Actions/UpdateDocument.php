@@ -19,7 +19,7 @@ class UpdateDocument implements UpdatesDocuments
      */
     public function __invoke($user, $document, array $data)
     {
-        event(new UpdatingDocument(user: $user, data: $data));
+        event(new UpdatingDocument(user: $user, document: $document, data: $data));
         
         Validator::make($data, [
             'number' => 'nullable|string|max:255',

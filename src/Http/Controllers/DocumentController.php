@@ -31,12 +31,14 @@ class DocumentController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \StarfolkSoftware\Instrument\Document  $document
+     * @param  mixed  $document
      * @param  \StarfolkSoftware\Instrument\Contracts\UpdatesDocuments  $updatesDocuments
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(Document $document, UpdatesDocuments $updatesDocuments)
+    public function update($document, UpdatesDocuments $updatesDocuments)
     {
+        $document = Instrument::newDocumentModel()->findOrFail($document);
+        
         $document = $updatesDocuments(
             request()->user(),
             $document,
@@ -51,12 +53,14 @@ class DocumentController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \StarfolkSoftware\Instrument\Document  $document
+     * @param  mixed  $document
      * @param  \StarfolkSoftware\Instrument\Contracts\DeletesDocuments  $deletesDocuments
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function destroy(Document $document, DeletesDocuments $deletesDocuments)
+    public function destroy($document, DeletesDocuments $deletesDocuments)
     {
+        $document = Instrument::newDocumentModel()->findOrFail($document);
+
         $deletesDocuments(
             request()->user(),
             $document

@@ -11,6 +11,6 @@ trait TeamHasInstruments
      */
     public function documents()
     {
-        return $this->hasMany(Instrument::$documentModel);
+        return $this->hasMany(Instrument::$documentModel, 'team_id');
     }
 }
