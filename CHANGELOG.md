@@ -2,6 +2,10 @@
 
 All notable changes to `instrument` will be documented in this file.
 
+## v1.0.1 - 2023-02-15
+
+- Adds support for Laravel 10
+
 ## v1.0.0 - 2022-04-25
 
 ## What's Changed
