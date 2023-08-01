@@ -8,7 +8,6 @@ You can install the package via composer:
 
 ```bash
 composer require starfolksoftware/instrument
-php artisan instrument:install
 ```
 
 You can publish and run the migrations with:
