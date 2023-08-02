@@ -4,9 +4,26 @@ return [
     'middleware' => ['web'],
 
     'redirects' => [
-        'store' => null,
-        'update' => null,
-        'destroy' => '/',
+        'taxes' => [
+            'store' => null,
+            'update' => null,
+            'destroy' => '/',
+        ],
+        'documents' => [
+            'store' => null,
+            'update' => null,
+            'destroy' => '/',
+        ],
+        'accounts' => [
+            'store' => null,
+            'update' => null,
+            'destroy' => '/',
+        ],
+        'transactions' => [
+            'store' => null,
+            'update' => null,
+            'destroy' => '/',
+        ],
     ],
 
     'route_names' => [

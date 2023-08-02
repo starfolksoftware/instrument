@@ -23,7 +23,7 @@ class DocumentController extends Controller
         );
 
         return request()->wantsJson() ? response()->json(['document' => $document]) : redirect()->to(
-            request()->get('redirect', Instrument::redirects('store', '/'))
+            request()->get('redirect', Instrument::redirects('documents', 'store', '/'))
         );
     }
 
@@ -45,7 +45,7 @@ class DocumentController extends Controller
         );
 
         return request()->wantsJson() ? response()->json(['document' => $document]) : redirect()->to(
-            request()->get('redirect', Instrument::redirects('update', '/'))
+            request()->get('redirect', Instrument::redirects('documents', 'update', '/'))
         );
     }
 
@@ -66,7 +66,7 @@ class DocumentController extends Controller
         );
 
         return request()->wantsJson() ? response()->json([]) : redirect()->to(
-            request()->get('redirect', Instrument::redirects('destroy', '/'))
+            request()->get('redirect', Instrument::redirects('documents', 'destroy', '/'))
         );
     }
 }

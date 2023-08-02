@@ -2,16 +2,6 @@
 
 namespace StarfolkSoftware\Instrument;
 
-use StarfolkSoftware\Instrument\Contracts\CreatesAccounts;
-use StarfolkSoftware\Instrument\Contracts\CreatesDocuments;
-use StarfolkSoftware\Instrument\Contracts\CreatesTransactions;
-use StarfolkSoftware\Instrument\Contracts\DeletesAccounts;
-use StarfolkSoftware\Instrument\Contracts\DeletesDocuments;
-use StarfolkSoftware\Instrument\Contracts\DeletesTransactions;
-use StarfolkSoftware\Instrument\Contracts\UpdatesAccounts;
-use StarfolkSoftware\Instrument\Contracts\UpdatesDocuments;
-use StarfolkSoftware\Instrument\Contracts\UpdatesTransactions;
-
 final class Instrument
 {
     /**
@@ -27,6 +17,13 @@ final class Instrument
      * @var bool
      */
     public static $runsMigrations = true;
+
+    /**
+     * The tax model that should be used by Levy.
+     *
+     * @var string
+     */
+    public static $taxModel = 'StarfolkSoftware\\Instrument\\Tax';
 
     /**
      * The document model that should be used by Instrument.
@@ -107,6 +104,74 @@ final class Instrument
     public static function findTeamByIdOrFail($id)
     {
         return static::newTeamModel()->whereId($id)->firstOrFail();
+    }
+
+    /**
+     * Get the name of the tax model used by the application.
+     *
+     * @return string
+     */
+    public static function taxModel()
+    {
+        return static::$taxModel;
+    }
+
+    /**
+     * Get a new instance of the tax model.
+     *
+     * @return mixed
+     */
+    public static function newTaxModel()
+    {
+        $model = static::taxModel();
+
+        return new $model();
+    }
+
+    /**
+     * Specify the tax model that should be used by Levy.
+     *
+     * @param  string  $model
+     * @return static
+     */
+    public static function useTaxModel(string $model)
+    {
+        static::$taxModel = $model;
+
+        return new static();
+    }
+
+    /**
+     * Register a class / callback that should be used to create taxes.
+     *
+     * @param  string  $class
+     * @return void
+     */
+    public static function createTaxesUsing(string $class)
+    {
+        app()->singleton(Contracts\CreatesTaxes::class, $class);
+    }
+
+    /**
+     * Register a class / callback that should be used to update taxes.
+     *
+     * @param  string  $class
+     * @return void
+     */
+    public static function updateTaxesUsing(string $class)
+    {
+        app()->singleton(Contracts\UpdatesTaxes::class, $class);
+    }
+
+    /**
+     * Register a class / callback that should be used to delete taxes.
+     *
+     * @param  string  $class
+     * @return void
+     */
+    public static function deleteTaxesUsing(string $class)
+    {
+        app()->singleton(Contracts\DeletesTaxes::class, $class);
     }
 
     /**
@@ -222,7 +287,7 @@ final class Instrument
      */
     public static function createDocumentsUsing(string $class)
     {
-        app()->singleton(CreatesDocuments::class, $class);
+        app()->singleton(Contracts\CreatesDocuments::class, $class);
     }
 
     /**
@@ -233,7 +298,7 @@ final class Instrument
      */
     public static function updateDocumentsUsing(string $class)
     {
-        app()->singleton(UpdatesDocuments::class, $class);
+        app()->singleton(Contracts\UpdatesDocuments::class, $class);
     }
 
     /**
@@ -244,7 +309,7 @@ final class Instrument
      */
     public static function deleteDocumentsUsing(string $class)
     {
-        app()->singleton(DeletesDocuments::class, $class);
+        app()->singleton(Contracts\DeletesDocuments::class, $class);
     }
 
     /**
@@ -255,7 +320,7 @@ final class Instrument
      */
     public static function createAccountsUsing(string $class)
     {
-        app()->singleton(CreatesAccounts::class, $class);
+        app()->singleton(Contracts\CreatesAccounts::class, $class);
     }
 
     /**
@@ -266,7 +331,7 @@ final class Instrument
      */
     public static function updateAccountsUsing(string $class)
     {
-        app()->singleton(UpdatesAccounts::class, $class);
+        app()->singleton(Contracts\UpdatesAccounts::class, $class);
     }
 
     /**
@@ -277,7 +342,7 @@ final class Instrument
      */
     public static function deleteAccountsUsing(string $class)
     {
-        app()->singleton(DeletesAccounts::class, $class);
+        app()->singleton(Contracts\DeletesAccounts::class, $class);
     }
 
     /**
@@ -288,7 +353,7 @@ final class Instrument
      */
     public static function createTransactionsUsing(string $class)
     {
-        app()->singleton(CreatesTransactions::class, $class);
+        app()->singleton(Contracts\CreatesTransactions::class, $class);
     }
 
     /**
@@ -299,7 +364,7 @@ final class Instrument
      */
     public static function updateTransactionsUsing(string $class)
     {
-        app()->singleton(UpdatesTransactions::class, $class);
+        app()->singleton(Contracts\UpdatesTransactions::class, $class);
     }
 
     /**
@@ -310,7 +375,7 @@ final class Instrument
      */
     public static function deleteTransactionsUsing(string $class)
     {
-        app()->singleton(DeletesTransactions::class, $class);
+        app()->singleton(Contracts\DeletesTransactions::class, $class);
     }
 
     /**
@@ -353,11 +418,12 @@ final class Instrument
     /**
      * Get a completion redirect path for a specific feature.
      *
+     * @param  string  $type
      * @param  string  $redirect
      * @return string
      */
-    public static function redirects(string $redirect, $default = null)
+    public static function redirects(string $type, string $redirect, $default = null)
     {
-        return config('instrument.redirects.'.$redirect) ?? $default ?? '/';
+        return config("instrument.redirects.{$type}.{$redirect}") ?? $default ?? '/';
     }
 }
