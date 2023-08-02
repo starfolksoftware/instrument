@@ -4,15 +4,7 @@ namespace StarfolkSoftware\Instrument;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use StarfolkSoftware\Instrument\Actions\CreateAccount;
-use StarfolkSoftware\Instrument\Actions\CreateDocument;
-use StarfolkSoftware\Instrument\Actions\CreateTransaction;
-use StarfolkSoftware\Instrument\Actions\DeleteAccount;
-use StarfolkSoftware\Instrument\Actions\DeleteDocument;
-use StarfolkSoftware\Instrument\Actions\DeleteTransaction;
-use StarfolkSoftware\Instrument\Actions\UpdateAccount;
-use StarfolkSoftware\Instrument\Actions\UpdateDocument;
-use StarfolkSoftware\Instrument\Actions\UpdateTransaction;
+use StarfolkSoftware\Instrument\Actions;
 use StarfolkSoftware\Instrument\Commands\InstallCommand;
 
 class InstrumentServiceProvider extends PackageServiceProvider
@@ -40,22 +32,28 @@ class InstrumentServiceProvider extends PackageServiceProvider
 
     public function packageRegistered()
     {
-        Instrument::createDocumentsUsing(CreateDocument::class);
+        Instrument::createDocumentsUsing(Actions\CreateDocument::class);
 
-        Instrument::updateDocumentsUsing(UpdateDocument::class);
+        Instrument::updateDocumentsUsing(Actions\UpdateDocument::class);
 
-        Instrument::deleteDocumentsUsing(DeleteDocument::class);
+        Instrument::deleteDocumentsUsing(Actions\DeleteDocument::class);
 
-        Instrument::createAccountsUsing(CreateAccount::class);
+        Instrument::createAccountsUsing(Actions\CreateAccount::class);
 
-        Instrument::updateAccountsUsing(UpdateAccount::class);
+        Instrument::updateAccountsUsing(Actions\UpdateAccount::class);
 
-        Instrument::deleteAccountsUsing(DeleteAccount::class);
+        Instrument::deleteAccountsUsing(Actions\DeleteAccount::class);
 
-        Instrument::createTransactionsUsing(CreateTransaction::class);
+        Instrument::createTransactionsUsing(Actions\CreateTransaction::class);
 
-        Instrument::updateTransactionsUsing(UpdateTransaction::class);
+        Instrument::updateTransactionsUsing(Actions\UpdateTransaction::class);
 
-        Instrument::deleteTransactionsUsing(DeleteTransaction::class);
+        Instrument::deleteTransactionsUsing(Actions\DeleteTransaction::class);
+
+        Instrument::createTaxesUsing(Actions\CreateTax::class);
+
+        Instrument::updateTaxesUsing(Actions\UpdateTax::class);
+
+        Instrument::deleteTaxesUsing(Actions\DeleteTax::class);
     }
 }

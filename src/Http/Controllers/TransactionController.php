@@ -23,7 +23,7 @@ class TransactionController extends Controller
         );
 
         return request()->wantsJson() ? response()->json(['account' => $account]) : redirect()->to(
-            request()->get('redirect', Instrument::redirects('store', '/'))
+            request()->get('redirect', Instrument::redirects('transactions', 'store', '/'))
         );
     }
 
@@ -45,7 +45,7 @@ class TransactionController extends Controller
         );
 
         return request()->wantsJson() ? response()->json(['account' => $account]) : redirect()->to(
-            request()->get('redirect', Instrument::redirects('update', '/'))
+            request()->get('redirect', Instrument::redirects('transactions', 'update', '/'))
         );
     }
 
@@ -66,7 +66,7 @@ class TransactionController extends Controller
         );
 
         return request()->wantsJson() ? response()->json([]) : redirect()->to(
-            request()->get('redirect', Instrument::redirects('destroy', '/'))
+            request()->get('redirect', Instrument::redirects('transactions', 'destroy', '/'))
         );
     }
 }

@@ -1,14 +1,20 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use StarfolkSoftware\Instrument\Http\Controllers\AccountController;
-use StarfolkSoftware\Instrument\Http\Controllers\DocumentController;
-use StarfolkSoftware\Instrument\Http\Controllers\TransactionController;
+use StarfolkSoftware\Instrument\Http\Controllers;
 
 Route::group([
     'middleware' => config('instrument.middleware', ['web']),
 ], function () {
-    Route::resource('documents', DocumentController::class)
+    Route::resource('taxes', Controllers\TaxController::class)
+        ->only(['store', 'update', 'destroy'])
+        ->names([
+            'store' => config('instrument.route_names.taxes.store', 'taxes.store'),
+            'update' => config('instrument.route_names.taxes.update', 'taxes.update'),
+            'destroy' => config('instrument.route_names.taxes.destroy', 'taxes.destroy'),
+        ]);
+
+    Route::resource('documents', Controllers\DocumentController::class)
         ->only(['store', 'update', 'destroy'])
         ->names([
             'store' => config('instrument.route_names.documents.store', 'documents.store'),
@@ -16,7 +22,7 @@ Route::group([
             'destroy' => config('instrument.route_names.documents.destroy', 'documents.destroy'),
         ]);
 
-    Route::resource('accounts', AccountController::class)
+    Route::resource('accounts', Controllers\AccountController::class)
         ->only(['store', 'update', 'destroy'])
         ->names([
             'store' => config('instrument.route_names.accounts.store', 'accounts.store'),
@@ -24,7 +30,7 @@ Route::group([
             'destroy' => config('instrument.route_names.accounts.destroy', 'accounts.destroy'),
         ]);
 
-    Route::resource('transactions', TransactionController::class)
+    Route::resource('transactions', Controllers\TransactionController::class)
         ->only(['store', 'update', 'destroy'])
         ->names([
             'store' => config('instrument.route_names.transactions.store', 'transactions.store'),

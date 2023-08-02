@@ -3,6 +3,7 @@
 use Illuminate\Contracts\Auth\Authenticatable;
 use StarfolkSoftware\Instrument\Tests\Mocks\Account;
 use StarfolkSoftware\Instrument\Tests\Mocks\Document;
+use StarfolkSoftware\Instrument\Tests\Mocks\Tax;
 use StarfolkSoftware\Instrument\Tests\Mocks\Transaction;
 use StarfolkSoftware\Instrument\Tests\TestCase;
 
@@ -46,4 +47,14 @@ function accountFields()
 function transactionFields()
 {
     return Transaction::factory()->raw();
+}
+
+/**
+ * Returns tax fields.
+ * 
+ * @return array
+ */
+function taxFields()
+{
+    return Tax::factory()->raw();
 }

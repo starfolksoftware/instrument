@@ -5,13 +5,23 @@ namespace StarfolkSoftware\Instrument;
 trait TeamHasInstruments
 {
     /**
+     * Get the taxes associated with the team.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function taxes()
+    {
+        return $this->hasMany(Instrument::taxModel(), 'team_id');
+    }
+
+    /**
      * Get the documents for the team.
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function documents()
     {
-        return $this->hasMany(Instrument::$documentModel, 'team_id');
+        return $this->hasMany(Instrument::documentModel(), 'team_id');
     }
 
     /**
@@ -21,7 +31,7 @@ trait TeamHasInstruments
      */
     public function accounts()
     {
-        return $this->hasMany(Instrument::$accountModel, 'team_id');
+        return $this->hasMany(Instrument::accountModel(), 'team_id');
     }
 
     /**
@@ -31,6 +41,6 @@ trait TeamHasInstruments
      */
     public function transactions()
     {
-        return $this->hasMany(Instrument::$transactionModel, 'team_id');
+        return $this->hasMany(Instrument::transactionModel(), 'team_id');
     }
 }
