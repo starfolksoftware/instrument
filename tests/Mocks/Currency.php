@@ -3,10 +3,10 @@
 namespace StarfolkSoftware\Instrument\Tests\Mocks;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use StarfolkSoftware\Instrument\Currency as InstrumentCurrency;
 use StarfolkSoftware\Instrument\Events\CurrencyCreated;
 use StarfolkSoftware\Instrument\Events\CurrencyDeleted;
 use StarfolkSoftware\Instrument\Events\CurrencyUpdated;
-use StarfolkSoftware\Instrument\Currency as InstrumentCurrency;
 
 class Currency extends InstrumentCurrency
 {

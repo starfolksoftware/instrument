@@ -2,10 +2,10 @@
 
 use Illuminate\Support\Facades\Event;
 use StarfolkSoftware\Instrument\Events\CreatingCurrency;
-use StarfolkSoftware\Instrument\Events\DeletingCurrency;
 use StarfolkSoftware\Instrument\Events\CurrencyCreated;
 use StarfolkSoftware\Instrument\Events\CurrencyDeleted;
 use StarfolkSoftware\Instrument\Events\CurrencyUpdated;
+use StarfolkSoftware\Instrument\Events\DeletingCurrency;
 use StarfolkSoftware\Instrument\Events\UpdatingCurrency;
 use StarfolkSoftware\Instrument\Tests\Mocks\Currency;
 use StarfolkSoftware\Instrument\Tests\Mocks\TestUser;

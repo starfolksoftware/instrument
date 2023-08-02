@@ -2,8 +2,8 @@
 
 use Illuminate\Support\Facades\Event;
 use StarfolkSoftware\Instrument\Contracts\DeletesCurrencies;
-use StarfolkSoftware\Instrument\Events\DeletingCurrency;
 use StarfolkSoftware\Instrument\Events\CurrencyDeleted;
+use StarfolkSoftware\Instrument\Events\DeletingCurrency;
 use StarfolkSoftware\Instrument\Tests\Mocks\Currency;
 use StarfolkSoftware\Instrument\Tests\Mocks\TestUser;
 
