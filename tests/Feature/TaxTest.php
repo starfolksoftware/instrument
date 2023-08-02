@@ -1,11 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Event;
+use StarfolkSoftware\Instrument\Events\CreatingTax;
+use StarfolkSoftware\Instrument\Events\DeletingTax;
 use StarfolkSoftware\Instrument\Events\TaxCreated;
 use StarfolkSoftware\Instrument\Events\TaxDeleted;
 use StarfolkSoftware\Instrument\Events\TaxUpdated;
-use StarfolkSoftware\Instrument\Events\CreatingTax;
-use StarfolkSoftware\Instrument\Events\DeletingTax;
 use StarfolkSoftware\Instrument\Events\UpdatingTax;
 use StarfolkSoftware\Instrument\Tests\Mocks\Tax;
 use StarfolkSoftware\Instrument\Tests\Mocks\TestUser;

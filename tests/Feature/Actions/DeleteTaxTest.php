@@ -2,8 +2,8 @@
 
 use Illuminate\Support\Facades\Event;
 use StarfolkSoftware\Instrument\Contracts\DeletesTaxes;
-use StarfolkSoftware\Instrument\Events\TaxDeleted;
 use StarfolkSoftware\Instrument\Events\DeletingTax;
+use StarfolkSoftware\Instrument\Events\TaxDeleted;
 use StarfolkSoftware\Instrument\Tests\Mocks\Tax;
 use StarfolkSoftware\Instrument\Tests\Mocks\TestUser;
 

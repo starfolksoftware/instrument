@@ -2,8 +2,8 @@
 
 use Illuminate\Support\Facades\Event;
 use StarfolkSoftware\Instrument\Contracts\CreatesTaxes;
-use StarfolkSoftware\Instrument\Events\TaxCreated;
 use StarfolkSoftware\Instrument\Events\CreatingTax;
+use StarfolkSoftware\Instrument\Events\TaxCreated;
 use StarfolkSoftware\Instrument\Tests\Mocks\Tax;
 use StarfolkSoftware\Instrument\Tests\Mocks\TestUser;
 

@@ -2,8 +2,6 @@
 
 namespace StarfolkSoftware\Instrument;
 
-use StarfolkSoftware\Instrument\Contracts;
-
 final class Instrument
 {
     /**

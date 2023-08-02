@@ -60,7 +60,7 @@ class TaxController extends Controller
     public function destroy(mixed $tax, DeletesTaxes $deletesTaxes)
     {
         $tax = Instrument::newTaxModel()->findOrFail($tax);
-        
+
         $deletesTaxes(
             request()->user(),
             $tax

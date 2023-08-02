@@ -4,7 +4,6 @@ namespace StarfolkSoftware\Instrument;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use StarfolkSoftware\Instrument\Actions;
 use StarfolkSoftware\Instrument\Commands\InstallCommand;
 
 class InstrumentServiceProvider extends PackageServiceProvider

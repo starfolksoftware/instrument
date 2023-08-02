@@ -3,10 +3,10 @@
 namespace StarfolkSoftware\Instrument\Tests\Mocks;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use StarfolkSoftware\Instrument\Tax as InstrumentTax;
 use StarfolkSoftware\Instrument\Events\TaxCreated;
 use StarfolkSoftware\Instrument\Events\TaxDeleted;
 use StarfolkSoftware\Instrument\Events\TaxUpdated;
+use StarfolkSoftware\Instrument\Tax as InstrumentTax;
 
 class Tax extends InstrumentTax
 {

@@ -6,7 +6,6 @@ use Illuminate\Support\Facades\Validator;
 use StarfolkSoftware\Instrument\Contracts\UpdatesTaxes;
 use StarfolkSoftware\Instrument\Events\TaxUpdated;
 use StarfolkSoftware\Instrument\Events\UpdatingTax;
-use StarfolkSoftware\Instrument\Instrument;
 
 class UpdateTax implements UpdatesTaxes
 {

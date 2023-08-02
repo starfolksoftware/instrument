@@ -51,7 +51,7 @@ function transactionFields()
 
 /**
  * Returns tax fields.
- * 
+ *
  * @return array
  */
 function taxFields()
