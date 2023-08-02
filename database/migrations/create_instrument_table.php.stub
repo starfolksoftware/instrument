@@ -8,6 +8,22 @@ return new class extends Migration
 {
     public function up()
     {
+        Schema::create('contacts', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('team_id')->nullable();
+            $table->string('type');
+            $table->string('name');
+            $table->json('meta');
+            $table->timestamps();
+        });
+
+        Schema::create('contactables', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('contact_id');
+            $table->morphs('contactable');
+            $table->timestamps();
+        });
+
         Schema::create('taxes', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('team_id')->nullable();

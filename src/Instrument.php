@@ -21,11 +21,18 @@ final class Instrument
     public static $runsMigrations = true;
 
     /**
+     * The contact model that should be used by Ally.
+     *
+     * @var string
+     */
+    public static $contactModel = 'App\\Models\\Contact';
+
+    /**
      * The tax model that should be used by Levy.
      *
      * @var string
      */
-    public static $taxModel = 'StarfolkSoftware\\Instrument\\Tax';
+    public static $taxModel = 'App\\Models\\Tax';
 
     /**
      * The currency model that should be used by Tender.
@@ -37,21 +44,21 @@ final class Instrument
      *
      * @var string
      */
-    public static $documentModel = 'StarfolkSoftware\\Instrument\\Document';
+    public static $documentModel = 'App\\Models\\Document';
 
     /**
      * The account model that should be used by Instrument.
      *
      * @var string
      */
-    public static $accountModel = 'StarfolkSoftware\\Instrument\\Account';
+    public static $accountModel = 'App\\Models\\Account';
 
     /**
      * The transaction model that should be used by Instrument.
      *
      * @var string
      */
-    public static $transactionModel = 'StarfolkSoftware\\Instrument\\Transaction';
+    public static $transactionModel = 'App\\Models\\Transaction';
 
     /**
      * Indicates if Instrument should support teams.
@@ -111,6 +118,74 @@ final class Instrument
     public static function findTeamByIdOrFail($id)
     {
         return static::newTeamModel()->whereId($id)->firstOrFail();
+    }
+
+    /**
+     * Get the name of the contact model used by the application.
+     *
+     * @return string
+     */
+    public static function contactModel()
+    {
+        return static::$contactModel;
+    }
+
+    /**
+     * Get a new instance of the contact model.
+     *
+     * @return mixed
+     */
+    public static function newContactModel()
+    {
+        $model = static::contactModel();
+
+        return new $model();
+    }
+
+    /**
+     * Specify the contact model that should be used by Ally.
+     *
+     * @param  string  $model
+     * @return static
+     */
+    public static function useContactModel(string $model)
+    {
+        static::$contactModel = $model;
+
+        return new static();
+    }
+
+    /**
+     * Register a class / callback that should be used to create Contacts.
+     *
+     * @param  string  $class
+     * @return void
+     */
+    public static function createContactsUsing(string $class)
+    {
+        app()->singleton(Contracts\CreatesContacts::class, $class);
+    }
+
+    /**
+     * Register a class / callback that should be used to update Contacts.
+     *
+     * @param  string  $class
+     * @return void
+     */
+    public static function updateContactsUsing(string $class)
+    {
+        app()->singleton(Contracts\UpdatesContacts::class, $class);
+    }
+
+    /**
+     * Register a class / callback that should be used to delete Contacts.
+     *
+     * @param  string  $class
+     * @return void
+     */
+    public static function deleteContactsUsing(string $class)
+    {
+        app()->singleton(Contracts\DeletesContacts::class, $class);
     }
 
     /**

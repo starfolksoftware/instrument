@@ -4,6 +4,11 @@ return [
     'middleware' => ['web'],
 
     'redirects' => [
+        'contacts' => [
+            'store' => null,
+            'update' => null,
+            'destroy' => '/',
+        ],
         'taxes' => [
             'store' => null,
             'update' => null,
@@ -32,6 +37,11 @@ return [
     ],
 
     'route_names' => [
+        'contacts' => [
+            'store' => 'contacts.store',
+            'update' => 'contacts.update',
+            'destroy' => 'contacts.destroy',
+        ],
         'currencies' => [
             'store' => 'currencies.store',
             'update' => 'currencies.update',

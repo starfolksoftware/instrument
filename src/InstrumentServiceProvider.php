@@ -60,5 +60,11 @@ class InstrumentServiceProvider extends PackageServiceProvider
         Instrument::updateCurrenciesUsing(Actions\UpdateCurrency::class);
 
         Instrument::deleteCurrenciesUsing(Actions\DeleteCurrency::class);
+
+        Instrument::createContactsUsing(Actions\CreateContact::class);
+
+        Instrument::updateContactsUsing(Actions\UpdateContact::class);
+
+        Instrument::deleteContactsUsing(Actions\DeleteContact::class);
     }
 }

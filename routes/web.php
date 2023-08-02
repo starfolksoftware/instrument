@@ -6,6 +6,14 @@ use StarfolkSoftware\Instrument\Http\Controllers;
 Route::group([
     'middleware' => config('instrument.middleware', ['web']),
 ], function () {
+    Route::resource('contacts', Controllers\ContactController::class)
+        ->only(['store', 'update', 'destroy'])
+        ->names([
+            'store' => config('instrument.route_names.contacts.store', 'contacts.store'),
+            'update' => config('instrument.route_names.contacts.update', 'contacts.update'),
+            'destroy' => config('instrument.route_names.contacts.destroy', 'contacts.destroy'),
+        ]);
+
     Route::resource('taxes', Controllers\TaxController::class)
         ->only(['store', 'update', 'destroy'])
         ->names([
