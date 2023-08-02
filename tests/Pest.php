@@ -2,6 +2,7 @@
 
 use Illuminate\Contracts\Auth\Authenticatable;
 use StarfolkSoftware\Instrument\Tests\Mocks\Account;
+use StarfolkSoftware\Instrument\Tests\Mocks\Contact;
 use StarfolkSoftware\Instrument\Tests\Mocks\Currency;
 use StarfolkSoftware\Instrument\Tests\Mocks\Document;
 use StarfolkSoftware\Instrument\Tests\Mocks\Tax;
@@ -58,6 +59,16 @@ function transactionFields()
 function taxFields()
 {
     return Tax::factory()->raw();
+}
+
+/**
+ * Returns contact fields.
+ *
+ * @return array
+ */
+function contactFields()
+{
+    return Contact::factory()->raw();
 }
 
 /**
