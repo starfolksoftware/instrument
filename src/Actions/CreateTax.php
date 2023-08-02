@@ -2,18 +2,20 @@
 
 namespace StarfolkSoftware\Instrument\Actions;
 
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Validator;
 use StarfolkSoftware\Instrument\Contracts\CreatesTaxes;
 use StarfolkSoftware\Instrument\Events\CreatingTax;
 use StarfolkSoftware\Instrument\Events\TaxCreated;
 use StarfolkSoftware\Instrument\Instrument;
+use StarfolkSoftware\Instrument\Tax;
 
 class CreateTax implements CreatesTaxes
 {
     /**
      * Create a new tax.
      */
-    public function __invoke(mixed $user, array $data, $teamId = null): mixed
+    public function __invoke(Model $user, array $data, $teamId = null): Tax
     {
         event(new CreatingTax(user: $user, data: $data));
 

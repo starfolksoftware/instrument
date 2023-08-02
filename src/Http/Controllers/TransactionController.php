@@ -19,7 +19,8 @@ class TransactionController extends Controller
     {
         $account = $createsTransactions(
             request()->user(),
-            request()->all()
+            request()->all(),
+            request('team_id')
         );
 
         return request()->wantsJson() ? response()->json(['account' => $account]) : redirect()->to(

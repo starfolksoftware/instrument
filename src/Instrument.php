@@ -2,6 +2,8 @@
 
 namespace StarfolkSoftware\Instrument;
 
+use Illuminate\Database\Eloquent\Model;
+
 final class Instrument
 {
     /**
@@ -24,6 +26,11 @@ final class Instrument
      * @var string
      */
     public static $taxModel = 'StarfolkSoftware\\Instrument\\Tax';
+
+    /**
+     * The currency model that should be used by Tender.
+     */
+    public static string $currencyModel = 'App\\Models\\Currency';
 
     /**
      * The document model that should be used by Instrument.
@@ -172,6 +179,58 @@ final class Instrument
     public static function deleteTaxesUsing(string $class)
     {
         app()->singleton(Contracts\DeletesTaxes::class, $class);
+    }
+
+    /**
+     * Get the name of the currency model used by the application.
+     */
+    public static function currencyModel(): string
+    {
+        return static::$currencyModel;
+    }
+
+    /**
+     * Get a new instance of the currency model.
+     */
+    public static function newCurrencyModel(): Model
+    {
+        $model = static::currencyModel();
+
+        return new $model();
+    }
+
+    /**
+     * Specify the currency model that should be used by Tender.
+     */
+    public static function useCurrencyModel(string $model): static
+    {
+        static::$currencyModel = $model;
+
+        return new static();
+    }
+
+    /**
+     * Register a class / callback that should be used to create Currencies.
+     */
+    public static function createCurrenciesUsing(string $class): void
+    {
+        app()->singleton(Contracts\CreatesCurrencies::class, $class);
+    }
+
+    /**
+     * Register a class / callback that should be used to update Currencies.
+     */
+    public static function updateCurrenciesUsing(string $class): void
+    {
+        app()->singleton(Contracts\UpdatesCurrencies::class, $class);
+    }
+
+    /**
+     * Register a class / callback that should be used to delete Currencies.
+     */
+    public static function deleteCurrenciesUsing(string $class): void
+    {
+        app()->singleton(Contracts\DeletesCurrencies::class, $class);
     }
 
     /**

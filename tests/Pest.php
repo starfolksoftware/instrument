@@ -2,6 +2,7 @@
 
 use Illuminate\Contracts\Auth\Authenticatable;
 use StarfolkSoftware\Instrument\Tests\Mocks\Account;
+use StarfolkSoftware\Instrument\Tests\Mocks\Currency;
 use StarfolkSoftware\Instrument\Tests\Mocks\Document;
 use StarfolkSoftware\Instrument\Tests\Mocks\Tax;
 use StarfolkSoftware\Instrument\Tests\Mocks\Transaction;
@@ -57,4 +58,14 @@ function transactionFields()
 function taxFields()
 {
     return Tax::factory()->raw();
+}
+
+/**
+ * Returns currency fields.
+ *
+ * @return array
+ */
+function currencyFields()
+{
+    return Currency::factory()->raw();
 }

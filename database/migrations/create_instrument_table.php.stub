@@ -23,6 +23,28 @@ return new class extends Migration
             $table->morphs('taxable');
             $table->timestamps();
         });
+
+        Schema::create('currencies', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('team_id')->nullable();
+            $table->string('name');
+            $table->string('code');
+            $table->double('rate', 15, 8);
+            $table->integer('precision')->nullable();
+            $table->string('symbol')->nullable();
+            $table->string('symbol_position')->default('before');
+            $table->string('decimal_mark')->nullable();
+            $table->string('thousands_separator')->nullable();
+            $table->boolean('enabled')->default(true);
+            $table->timestamps();
+        });
+
+        Schema::create('currensables', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('currency_id');
+            $table->morphs('currensable');
+            $table->timestamps();
+        });
         
         Schema::create('documents', function (Blueprint $table) {
             $table->id();
@@ -76,5 +98,19 @@ return new class extends Migration
 
             $table->timestamps();
         });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists('taxes');
+        Schema::dropIfExists('taxables');
+        Schema::dropIfExists('currencies');
+        Schema::dropIfExists('currensables');
+        Schema::dropIfExists('documents');
+        Schema::dropIfExists('accounts');
+        Schema::dropIfExists('transactions');
     }
 };

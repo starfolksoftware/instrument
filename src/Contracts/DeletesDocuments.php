@@ -2,14 +2,13 @@
 
 namespace StarfolkSoftware\Instrument\Contracts;
 
+use Illuminate\Database\Eloquent\Model;
+use StarfolkSoftware\Instrument\Document;
+
 interface DeletesDocuments
 {
     /**
      * Delete an existing document.
-     *
-     * @param  mixed  $user
-     * @param  mixed  $document
-     * @return void
      */
-    public function __invoke($user, $document);
+    public function __invoke(Model $user, Document $document): void;
 }

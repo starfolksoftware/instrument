@@ -2,8 +2,10 @@
 
 namespace StarfolkSoftware\Instrument\Actions;
 
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Validator;
 use StarfolkSoftware\Instrument\Contracts\CreatesDocuments;
+use StarfolkSoftware\Instrument\Document;
 use StarfolkSoftware\Instrument\Events\CreatingDocument;
 use StarfolkSoftware\Instrument\Events\DocumentCreated;
 use StarfolkSoftware\Instrument\Instrument;
@@ -12,13 +14,8 @@ class CreateDocument implements CreatesDocuments
 {
     /**
      * Create a new document.
-     *
-     * @param  mixed  $user
-     * @param  array  $data
-     * @param  mixed  $teamId
-     * @return mixed
      */
-    public function __invoke($user, array $data, $teamId = null)
+    public function __invoke(Model $user, array $data, $teamId = null): Document
     {
         event(new CreatingDocument(user: $user, data: $data));
 

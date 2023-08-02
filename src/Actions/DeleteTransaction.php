@@ -2,20 +2,18 @@
 
 namespace StarfolkSoftware\Instrument\Actions;
 
+use Illuminate\Database\Eloquent\Model;
 use StarfolkSoftware\Instrument\Contracts\DeletesTransactions;
 use StarfolkSoftware\Instrument\Events\DeletingTransaction;
 use StarfolkSoftware\Instrument\Events\TransactionDeleted;
+use StarfolkSoftware\Instrument\Transaction;
 
 class DeleteTransaction implements DeletesTransactions
 {
     /**
      * Delete a transaction.
-     *
-     * @param  mixed  $user
-     * @param  mixed  $transaction
-     * @return void
      */
-    public function __invoke($user, $transaction)
+    public function __invoke(Model $user, Transaction $transaction): void
     {
         event(new DeletingTransaction($user, transaction: $transaction));
 

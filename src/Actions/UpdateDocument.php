@@ -2,8 +2,10 @@
 
 namespace StarfolkSoftware\Instrument\Actions;
 
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Validator;
 use StarfolkSoftware\Instrument\Contracts\UpdatesDocuments;
+use StarfolkSoftware\Instrument\Document;
 use StarfolkSoftware\Instrument\Events\DocumentUpdated;
 use StarfolkSoftware\Instrument\Events\UpdatingDocument;
 
@@ -11,13 +13,8 @@ class UpdateDocument implements UpdatesDocuments
 {
     /**
      * Update an existing document.
-     *
-     * @param  mixed  $user
-     * @param  mixed  $document
-     * @param  array  $data
-     * @return mixed
      */
-    public function __invoke($user, $document, array $data)
+    public function __invoke(Model $user, Document $document, array $data): Document
     {
         event(new UpdatingDocument(user: $user, document: $document, data: $data));
 

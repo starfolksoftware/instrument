@@ -2,23 +2,20 @@
 
 namespace StarfolkSoftware\Instrument\Actions;
 
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Validator;
 use StarfolkSoftware\Instrument\Contracts\CreatesTransactions;
 use StarfolkSoftware\Instrument\Events\CreatingTransaction;
 use StarfolkSoftware\Instrument\Events\TransactionCreated;
 use StarfolkSoftware\Instrument\Instrument;
+use StarfolkSoftware\Instrument\Transaction;
 
 class CreateTransaction implements CreatesTransactions
 {
     /**
      * Create a new transaction.
-     *
-     * @param  mixed  $user
-     * @param  array  $data
-     * @param  mixed  $teamId
-     * @return mixed
      */
-    public function __invoke($user, array $data, $teamId = null)
+    public function __invoke(Model $user, array $data, $teamId = null): Transaction
     {
         event(new CreatingTransaction(user: $user, data: $data));
 

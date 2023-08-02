@@ -9,6 +9,11 @@ return [
             'update' => null,
             'destroy' => '/',
         ],
+        'currencies' => [
+            'store' => null,
+            'update' => null,
+            'destroy' => '/',
+        ],
         'documents' => [
             'store' => null,
             'update' => null,
@@ -27,6 +32,16 @@ return [
     ],
 
     'route_names' => [
+        'currencies' => [
+            'store' => 'currencies.store',
+            'update' => 'currencies.update',
+            'destroy' => 'currencies.destroy',
+        ],
+        'taxes' => [
+            'store' => 'taxes.store',
+            'update' => 'taxes.update',
+            'destroy' => 'taxes.destroy',
+        ],
         'documents' => [
             'store' => 'documents.store',
             'update' => 'documents.update',

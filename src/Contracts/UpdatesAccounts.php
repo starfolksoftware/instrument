@@ -2,15 +2,13 @@
 
 namespace StarfolkSoftware\Instrument\Contracts;
 
+use Illuminate\Database\Eloquent\Model;
+use StarfolkSoftware\Instrument\Account;
+
 interface UpdatesAccounts
 {
     /**
      * Update an existing account.
-     *
-     * @param  mixed  $user
-     * @param  mixed  $account
-     * @param  array  $data
-     * @return mixed
      */
-    public function __invoke($user, $account, array $data);
+    public function __invoke(Model $user, Account $account, array $data): Account;
 }

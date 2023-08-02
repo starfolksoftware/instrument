@@ -19,7 +19,8 @@ class AccountController extends Controller
     {
         $account = $createsAccounts(
             request()->user(),
-            request()->all()
+            request()->all(),
+            request('team_id')
         );
 
         return request()->wantsJson() ? response()->json(['account' => $account]) : redirect()->to(

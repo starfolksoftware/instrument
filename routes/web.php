@@ -14,6 +14,14 @@ Route::group([
             'destroy' => config('instrument.route_names.taxes.destroy', 'taxes.destroy'),
         ]);
 
+    Route::resource('currencies', Controllers\CurrencyController::class)
+        ->only(['store', 'update', 'destroy'])
+        ->names([
+            'store' => config('instrument.route_names.currencies.store', 'currencies.store'),
+            'update' => config('instrument.route_names.currencies.update', 'currencies.update'),
+            'destroy' => config('instrument.route_names.currencies.destroy', 'currencies.destroy'),
+        ]);
+
     Route::resource('documents', Controllers\DocumentController::class)
         ->only(['store', 'update', 'destroy'])
         ->names([

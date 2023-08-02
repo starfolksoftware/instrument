@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Models\Account;
+use App\Models\Currency;
 use App\Models\Document;
 use App\Models\Tax;
 use App\Models\Transaction;
@@ -33,6 +34,8 @@ class InstrumentServiceProvider extends ServiceProvider
         Instrument::useAccountModel(Account::class);
 
         Instrument::useTaxModel(Tax::class);
+
+        Instrument::useCurrencyModel(Currency::class);
 
         Instrument::useTransactionModel(Transaction::class);
     }
