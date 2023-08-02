@@ -2,10 +2,10 @@
 
 namespace StarfolkSoftware\Instrument\Http\Controllers;
 
-use StarfolkSoftware\Instrument\Instrument;
 use StarfolkSoftware\Instrument\Contracts\CreatesContacts;
 use StarfolkSoftware\Instrument\Contracts\DeletesContacts;
 use StarfolkSoftware\Instrument\Contracts\UpdatesContacts;
+use StarfolkSoftware\Instrument\Instrument;
 
 class ContactController extends Controller
 {

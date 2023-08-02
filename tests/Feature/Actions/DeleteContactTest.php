@@ -2,8 +2,8 @@
 
 use Illuminate\Support\Facades\Event;
 use StarfolkSoftware\Instrument\Contracts\DeletesContacts;
-use StarfolkSoftware\Instrument\Events\DeletingContact;
 use StarfolkSoftware\Instrument\Events\ContactDeleted;
+use StarfolkSoftware\Instrument\Events\DeletingContact;
 use StarfolkSoftware\Instrument\Tests\Mocks\Contact;
 use StarfolkSoftware\Instrument\Tests\Mocks\TestUser;
 

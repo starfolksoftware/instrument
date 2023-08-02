@@ -2,10 +2,10 @@
 
 namespace StarfolkSoftware\Instrument\Actions;
 
+use Illuminate\Support\Facades\Validator;
 use StarfolkSoftware\Instrument\Contracts\UpdatesContacts;
 use StarfolkSoftware\Instrument\Events\ContactUpdated;
 use StarfolkSoftware\Instrument\Events\UpdatingContact;
-use Illuminate\Support\Facades\Validator;
 
 class UpdateContact implements UpdatesContacts
 {

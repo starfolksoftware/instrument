@@ -3,10 +3,10 @@
 namespace StarfolkSoftware\Instrument\Tests\Mocks;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use StarfolkSoftware\Instrument\Contact as InstrumentContact;
 use StarfolkSoftware\Instrument\Events\ContactCreated;
 use StarfolkSoftware\Instrument\Events\ContactDeleted;
 use StarfolkSoftware\Instrument\Events\ContactUpdated;
-use StarfolkSoftware\Instrument\Contact as InstrumentContact;
 
 class Contact extends InstrumentContact
 {

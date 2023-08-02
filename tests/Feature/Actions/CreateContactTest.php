@@ -2,8 +2,8 @@
 
 use Illuminate\Support\Facades\Event;
 use StarfolkSoftware\Instrument\Contracts\CreatesContacts;
-use StarfolkSoftware\Instrument\Events\CreatingContact;
 use StarfolkSoftware\Instrument\Events\ContactCreated;
+use StarfolkSoftware\Instrument\Events\CreatingContact;
 use StarfolkSoftware\Instrument\Tests\Mocks\Contact;
 use StarfolkSoftware\Instrument\Tests\Mocks\TestUser;
 

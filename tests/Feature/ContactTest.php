@@ -1,11 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Event;
-use StarfolkSoftware\Instrument\Events\CreatingContact;
-use StarfolkSoftware\Instrument\Events\DeletingContact;
 use StarfolkSoftware\Instrument\Events\ContactCreated;
 use StarfolkSoftware\Instrument\Events\ContactDeleted;
 use StarfolkSoftware\Instrument\Events\ContactUpdated;
+use StarfolkSoftware\Instrument\Events\CreatingContact;
+use StarfolkSoftware\Instrument\Events\DeletingContact;
 use StarfolkSoftware\Instrument\Events\UpdatingContact;
 use StarfolkSoftware\Instrument\Tests\Mocks\Contact;
 use StarfolkSoftware\Instrument\Tests\Mocks\TestUser;

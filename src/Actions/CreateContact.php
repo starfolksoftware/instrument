@@ -2,11 +2,11 @@
 
 namespace StarfolkSoftware\Instrument\Actions;
 
-use StarfolkSoftware\Instrument\Instrument;
+use Illuminate\Support\Facades\Validator;
 use StarfolkSoftware\Instrument\Contracts\CreatesContacts;
 use StarfolkSoftware\Instrument\Events\ContactCreated;
 use StarfolkSoftware\Instrument\Events\CreatingContact;
-use Illuminate\Support\Facades\Validator;
+use StarfolkSoftware\Instrument\Instrument;
 
 class CreateContact implements CreatesContacts
 {
