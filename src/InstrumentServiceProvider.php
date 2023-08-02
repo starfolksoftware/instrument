@@ -54,5 +54,11 @@ class InstrumentServiceProvider extends PackageServiceProvider
         Instrument::updateTaxesUsing(Actions\UpdateTax::class);
 
         Instrument::deleteTaxesUsing(Actions\DeleteTax::class);
+
+        Instrument::createCurrenciesUsing(Actions\CreateCurrency::class);
+
+        Instrument::updateCurrenciesUsing(Actions\UpdateCurrency::class);
+
+        Instrument::deleteCurrenciesUsing(Actions\DeleteCurrency::class);
     }
 }

@@ -2,15 +2,13 @@
 
 namespace StarfolkSoftware\Instrument\Contracts;
 
+use Illuminate\Database\Eloquent\Model;
+use StarfolkSoftware\Instrument\Transaction;
+
 interface CreatesTransactions
 {
     /**
      * Create a new transaction.
-     *
-     * @param  mixed  $user
-     * @param  array  $data
-     * @param  mixed  $teamId
-     * @return mixed
      */
-    public function __invoke($user, array $data, $teamId = null);
+    public function __invoke(Model $user, array $data, $teamId = null): Transaction;
 }

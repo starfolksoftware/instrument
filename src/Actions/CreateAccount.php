@@ -2,7 +2,9 @@
 
 namespace StarfolkSoftware\Instrument\Actions;
 
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Validator;
+use StarfolkSoftware\Instrument\Account;
 use StarfolkSoftware\Instrument\Contracts\CreatesAccounts;
 use StarfolkSoftware\Instrument\Events\AccountCreated;
 use StarfolkSoftware\Instrument\Events\CreatingAccount;
@@ -12,13 +14,8 @@ class CreateAccount implements CreatesAccounts
 {
     /**
      * Create a new account.
-     *
-     * @param  mixed  $user
-     * @param  array  $data
-     * @param  mixed  $teamId
-     * @return mixed
      */
-    public function __invoke($user, array $data, $teamId = null)
+    public function __invoke(Model $user, array $data, $teamId = null): Account
     {
         event(new CreatingAccount(user: $user, data: $data));
 

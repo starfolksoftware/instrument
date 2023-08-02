@@ -2,7 +2,9 @@
 
 namespace StarfolkSoftware\Instrument\Actions;
 
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Validator;
+use StarfolkSoftware\Instrument\Account;
 use StarfolkSoftware\Instrument\Contracts\UpdatesAccounts;
 use StarfolkSoftware\Instrument\Events\AccountUpdated;
 use StarfolkSoftware\Instrument\Events\UpdatingAccount;
@@ -11,13 +13,8 @@ class UpdateAccount implements UpdatesAccounts
 {
     /**
      * Update an existing account.
-     *
-     * @param  mixed  $user
-     * @param  mixed  $account
-     * @param  array  $data
-     * @return mixed
      */
-    public function __invoke($user, $account, array $data)
+    public function __invoke(Model $user, Account $account, array $data): Account
     {
         event(new UpdatingAccount(user: $user, account: $account, data: $data));
 

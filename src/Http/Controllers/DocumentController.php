@@ -19,7 +19,8 @@ class DocumentController extends Controller
     {
         $document = $createsDocuments(
             request()->user(),
-            request()->all()
+            request()->all(),
+            request('team_id')
         );
 
         return request()->wantsJson() ? response()->json(['document' => $document]) : redirect()->to(

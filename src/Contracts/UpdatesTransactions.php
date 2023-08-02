@@ -2,15 +2,13 @@
 
 namespace StarfolkSoftware\Instrument\Contracts;
 
+use Illuminate\Database\Eloquent\Model;
+use StarfolkSoftware\Instrument\Transaction;
+
 interface UpdatesTransactions
 {
     /**
      * Update an existing transaction.
-     *
-     * @param  mixed  $user
-     * @param  mixed  $transaction
-     * @param  array  $data
-     * @return mixed
      */
-    public function __invoke($user, $transaction, array $data);
+    public function __invoke(Model $user, Transaction $transaction, array $data): Transaction;
 }

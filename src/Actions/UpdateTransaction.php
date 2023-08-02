@@ -2,22 +2,19 @@
 
 namespace StarfolkSoftware\Instrument\Actions;
 
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Validator;
 use StarfolkSoftware\Instrument\Contracts\UpdatesTransactions;
 use StarfolkSoftware\Instrument\Events\TransactionUpdated;
 use StarfolkSoftware\Instrument\Events\UpdatingTransaction;
+use StarfolkSoftware\Instrument\Transaction;
 
 class UpdateTransaction implements UpdatesTransactions
 {
     /**
      * Update an existing transaction.
-     *
-     * @param  mixed  $user
-     * @param  mixed  $transaction
-     * @param  array  $data
-     * @return mixed
      */
-    public function __invoke($user, $transaction, array $data)
+    public function __invoke(Model $user, Transaction $transaction, array $data): Transaction
     {
         event(new UpdatingTransaction(user: $user, transaction: $transaction, data: $data));
 

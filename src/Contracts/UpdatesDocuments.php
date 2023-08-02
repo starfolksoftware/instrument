@@ -2,15 +2,13 @@
 
 namespace StarfolkSoftware\Instrument\Contracts;
 
+use Illuminate\Database\Eloquent\Model;
+use StarfolkSoftware\Instrument\Document;
+
 interface UpdatesDocuments
 {
     /**
      * Update an existing document.
-     *
-     * @param  mixed  $user
-     * @param  mixed  $document
-     * @param  array  $data
-     * @return mixed
      */
-    public function __invoke($user, $document, array $data);
+    public function __invoke(Model $user, Document $document, array $data): Document;
 }
