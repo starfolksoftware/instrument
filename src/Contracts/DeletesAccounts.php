@@ -9,10 +9,6 @@ interface DeletesAccounts
 {
     /**
      * Delete an existing account.
-     *
-     * @param  mixed  $user
-     * @param  mixed  $account
-     * @return void
      */
     public function __invoke(Model $user, Account $account): void;
 }
