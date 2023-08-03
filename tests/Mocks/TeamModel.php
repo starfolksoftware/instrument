@@ -1,9 +1,9 @@
 <?php
 
-namespace StarfolkSoftware\Instrument\Tests\Mocks;
+namespace Instrument\Tests\Mocks;
 
 use Illuminate\Database\Eloquent\Model;
-use StarfolkSoftware\Instrument\TeamHasInstruments;
+use Instrument\TeamHasInstruments;
 
 class TeamModel extends Model
 {

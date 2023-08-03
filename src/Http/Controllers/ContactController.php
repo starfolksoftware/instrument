@@ -1,11 +1,11 @@
 <?php
 
-namespace StarfolkSoftware\Instrument\Http\Controllers;
+namespace Instrument\Http\Controllers;
 
-use StarfolkSoftware\Instrument\Contracts\CreatesContacts;
-use StarfolkSoftware\Instrument\Contracts\DeletesContacts;
-use StarfolkSoftware\Instrument\Contracts\UpdatesContacts;
-use StarfolkSoftware\Instrument\Instrument;
+use Instrument\Contracts\CreatesContacts;
+use Instrument\Contracts\DeletesContacts;
+use Instrument\Contracts\UpdatesContacts;
+use Instrument\Instrument;
 
 class ContactController extends Controller
 {
@@ -54,7 +54,7 @@ class ContactController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  mixed  $contact
-     * @param  \StarfolkSoftware\Instrument\Contracts\DeletesContacts  $deletesContacts
+     * @param  \Instrument\Contracts\DeletesContacts  $deletesContacts
      * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy($contact, DeletesContacts $deletesContacts)

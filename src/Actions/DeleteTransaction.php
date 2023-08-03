@@ -1,12 +1,12 @@
 <?php
 
-namespace StarfolkSoftware\Instrument\Actions;
+namespace Instrument\Actions;
 
 use Illuminate\Database\Eloquent\Model;
-use StarfolkSoftware\Instrument\Contracts\DeletesTransactions;
-use StarfolkSoftware\Instrument\Events\DeletingTransaction;
-use StarfolkSoftware\Instrument\Events\TransactionDeleted;
-use StarfolkSoftware\Instrument\Transaction;
+use Instrument\Contracts\DeletesTransactions;
+use Instrument\Events\DeletingTransaction;
+use Instrument\Events\TransactionDeleted;
+use Instrument\Transaction;
 
 class DeleteTransaction implements DeletesTransactions
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace StarfolkSoftware\Instrument\Commands;
+namespace Instrument\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Str;

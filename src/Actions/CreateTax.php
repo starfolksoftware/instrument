@@ -1,14 +1,14 @@
 <?php
 
-namespace StarfolkSoftware\Instrument\Actions;
+namespace Instrument\Actions;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Validator;
-use StarfolkSoftware\Instrument\Contracts\CreatesTaxes;
-use StarfolkSoftware\Instrument\Events\CreatingTax;
-use StarfolkSoftware\Instrument\Events\TaxCreated;
-use StarfolkSoftware\Instrument\Instrument;
-use StarfolkSoftware\Instrument\Tax;
+use Instrument\Contracts\CreatesTaxes;
+use Instrument\Events\CreatingTax;
+use Instrument\Events\TaxCreated;
+use Instrument\Instrument;
+use Instrument\Tax;
 
 class CreateTax implements CreatesTaxes
 {

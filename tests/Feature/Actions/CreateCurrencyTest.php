@@ -1,16 +1,16 @@
 <?php
 
 use Illuminate\Support\Facades\Event;
-use StarfolkSoftware\Instrument\Contracts\CreatesCurrencies;
-use StarfolkSoftware\Instrument\Events\CreatingCurrency;
-use StarfolkSoftware\Instrument\Events\CurrencyCreated;
-use StarfolkSoftware\Instrument\Tests\Mocks\Currency;
-use StarfolkSoftware\Instrument\Tests\Mocks\TestUser;
+use Instrument\Contracts\CreatesCurrencies;
+use Instrument\Events\CreatingCurrency;
+use Instrument\Events\CurrencyCreated;
+use Instrument\Tests\Mocks\Currency;
+use Instrument\Tests\Mocks\TestUser;
 
 beforeAll(function () {
-    \StarfolkSoftware\Instrument\Instrument::supportsTeams(false);
+    \Instrument\Instrument::supportsTeams(false);
 
-    \StarfolkSoftware\Instrument\Instrument::useCurrencyModel(Currency::class);
+    \Instrument\Instrument::useCurrencyModel(Currency::class);
 });
 
 it('can create an currency', function () {

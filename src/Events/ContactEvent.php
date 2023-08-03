@@ -1,6 +1,6 @@
 <?php
 
-namespace StarfolkSoftware\Instrument\Events;
+namespace Instrument\Events;
 
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Foundation\Events\Dispatchable;

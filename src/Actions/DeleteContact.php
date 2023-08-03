@@ -1,10 +1,10 @@
 <?php
 
-namespace StarfolkSoftware\Instrument\Actions;
+namespace Instrument\Actions;
 
-use StarfolkSoftware\Instrument\Contracts\DeletesContacts;
-use StarfolkSoftware\Instrument\Events\ContactDeleted;
-use StarfolkSoftware\Instrument\Events\DeletingContact;
+use Instrument\Contracts\DeletesContacts;
+use Instrument\Events\ContactDeleted;
+use Instrument\Events\DeletingContact;
 
 class DeleteContact implements DeletesContacts
 {

@@ -1,14 +1,14 @@
 <?php
 
 use Illuminate\Support\Facades\Event;
-use StarfolkSoftware\Instrument\Contracts\UpdatesAccounts;
-use StarfolkSoftware\Instrument\Events\AccountUpdated;
-use StarfolkSoftware\Instrument\Events\UpdatingAccount;
-use StarfolkSoftware\Instrument\Tests\Mocks\Account;
-use StarfolkSoftware\Instrument\Tests\Mocks\TestUser;
+use Instrument\Contracts\UpdatesAccounts;
+use Instrument\Events\AccountUpdated;
+use Instrument\Events\UpdatingAccount;
+use Instrument\Tests\Mocks\Account;
+use Instrument\Tests\Mocks\TestUser;
 
 beforeAll(function () {
-    \StarfolkSoftware\Instrument\Instrument::supportsTeams(false);
+    \Instrument\Instrument::supportsTeams(false);
 });
 
 it('can update an account', function () {

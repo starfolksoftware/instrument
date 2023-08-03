@@ -1,19 +1,19 @@
 <?php
 
 use Illuminate\Support\Facades\Event;
-use StarfolkSoftware\Instrument\Events\AccountCreated;
-use StarfolkSoftware\Instrument\Events\AccountDeleted;
-use StarfolkSoftware\Instrument\Events\AccountUpdated;
-use StarfolkSoftware\Instrument\Events\CreatingAccount;
-use StarfolkSoftware\Instrument\Events\DeletingAccount;
-use StarfolkSoftware\Instrument\Events\UpdatingAccount;
-use StarfolkSoftware\Instrument\Tests\Mocks\Account;
-use StarfolkSoftware\Instrument\Tests\Mocks\TestUser;
+use Instrument\Events\AccountCreated;
+use Instrument\Events\AccountDeleted;
+use Instrument\Events\AccountUpdated;
+use Instrument\Events\CreatingAccount;
+use Instrument\Events\DeletingAccount;
+use Instrument\Events\UpdatingAccount;
+use Instrument\Tests\Mocks\Account;
+use Instrument\Tests\Mocks\TestUser;
 
 beforeAll(function () {
-    \StarfolkSoftware\Instrument\Instrument::supportsTeams(false);
+    \Instrument\Instrument::supportsTeams(false);
 
-    \StarfolkSoftware\Instrument\Instrument::useAccountModel(Account::class);
+    \Instrument\Instrument::useAccountModel(Account::class);
 });
 
 test('account can be created', function () {

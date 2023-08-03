@@ -1,11 +1,11 @@
 <?php
 
-namespace StarfolkSoftware\Instrument\Actions;
+namespace Instrument\Actions;
 
 use Illuminate\Support\Facades\Validator;
-use StarfolkSoftware\Instrument\Contracts\UpdatesContacts;
-use StarfolkSoftware\Instrument\Events\ContactUpdated;
-use StarfolkSoftware\Instrument\Events\UpdatingContact;
+use Instrument\Contracts\UpdatesContacts;
+use Instrument\Events\ContactUpdated;
+use Instrument\Events\UpdatingContact;
 
 class UpdateContact implements UpdatesContacts
 {

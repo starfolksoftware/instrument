@@ -1,15 +1,15 @@
 <?php
 
 use Illuminate\Support\Facades\Event;
-use StarfolkSoftware\Instrument\Contracts\DeletesCurrencies;
-use StarfolkSoftware\Instrument\Events\CurrencyDeleted;
-use StarfolkSoftware\Instrument\Events\DeletingCurrency;
-use StarfolkSoftware\Instrument\Tests\Mocks\Currency;
-use StarfolkSoftware\Instrument\Tests\Mocks\TestUser;
+use Instrument\Contracts\DeletesCurrencies;
+use Instrument\Events\CurrencyDeleted;
+use Instrument\Events\DeletingCurrency;
+use Instrument\Tests\Mocks\Currency;
+use Instrument\Tests\Mocks\TestUser;
 
 beforeAll(function () {
-    \StarfolkSoftware\Instrument\Instrument::supportsTeams(false);
-    \StarfolkSoftware\Instrument\Instrument::useCurrencyModel(Currency::class);
+    \Instrument\Instrument::supportsTeams(false);
+    \Instrument\Instrument::useCurrencyModel(Currency::class);
 });
 
 it('can delete an currency', function () {

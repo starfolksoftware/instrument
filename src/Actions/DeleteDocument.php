@@ -1,12 +1,12 @@
 <?php
 
-namespace StarfolkSoftware\Instrument\Actions;
+namespace Instrument\Actions;
 
 use Illuminate\Database\Eloquent\Model;
-use StarfolkSoftware\Instrument\Contracts\DeletesDocuments;
-use StarfolkSoftware\Instrument\Document;
-use StarfolkSoftware\Instrument\Events\DeletingDocument;
-use StarfolkSoftware\Instrument\Events\DocumentDeleted;
+use Instrument\Contracts\DeletesDocuments;
+use Instrument\Document;
+use Instrument\Events\DeletingDocument;
+use Instrument\Events\DocumentDeleted;
 
 class DeleteDocument implements DeletesDocuments
 {

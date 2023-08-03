@@ -1,13 +1,13 @@
 <?php
 
-namespace StarfolkSoftware\Instrument\Tests;
+namespace Instrument\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 use Orchestra\Testbench\TestCase as Orchestra;
-use StarfolkSoftware\Instrument\InstrumentServiceProvider;
-use StarfolkSoftware\Instrument\Tests\Mocks\TestUser;
+use Instrument\InstrumentServiceProvider;
+use Instrument\Tests\Mocks\TestUser;
 
 class TestCase extends Orchestra
 {
@@ -16,7 +16,7 @@ class TestCase extends Orchestra
         parent::setUp();
 
         Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'StarfolkSoftware\\Instrument\\Database\\Factories\\'.class_basename($modelName).'Factory'
+            fn (string $modelName) => 'Instrument\\Database\\Factories\\'.class_basename($modelName).'Factory'
         );
 
         $this->loadLaravelMigrations(['--database' => 'sqlite']);

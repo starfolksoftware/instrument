@@ -1,16 +1,16 @@
 <?php
 
 use Illuminate\Support\Facades\Event;
-use StarfolkSoftware\Instrument\Contracts\CreatesDocuments;
-use StarfolkSoftware\Instrument\Events\CreatingDocument;
-use StarfolkSoftware\Instrument\Events\DocumentCreated;
-use StarfolkSoftware\Instrument\Tests\Mocks\Document;
-use StarfolkSoftware\Instrument\Tests\Mocks\TestUser;
+use Instrument\Contracts\CreatesDocuments;
+use Instrument\Events\CreatingDocument;
+use Instrument\Events\DocumentCreated;
+use Instrument\Tests\Mocks\Document;
+use Instrument\Tests\Mocks\TestUser;
 
 beforeAll(function () {
-    \StarfolkSoftware\Instrument\Instrument::supportsTeams(false);
+    \Instrument\Instrument::supportsTeams(false);
 
-    \StarfolkSoftware\Instrument\Instrument::useDocumentModel(Document::class);
+    \Instrument\Instrument::useDocumentModel(Document::class);
 });
 
 it('can create a document', function () {

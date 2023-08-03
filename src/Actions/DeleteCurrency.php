@@ -1,12 +1,12 @@
 <?php
 
-namespace StarfolkSoftware\Instrument\Actions;
+namespace Instrument\Actions;
 
 use Illuminate\Database\Eloquent\Model;
-use StarfolkSoftware\Instrument\Contracts\DeletesCurrencies;
-use StarfolkSoftware\Instrument\Currency;
-use StarfolkSoftware\Instrument\Events\CurrencyDeleted;
-use StarfolkSoftware\Instrument\Events\DeletingCurrency;
+use Instrument\Contracts\DeletesCurrencies;
+use Instrument\Currency;
+use Instrument\Events\CurrencyDeleted;
+use Instrument\Events\DeletingCurrency;
 
 class DeleteCurrency implements DeletesCurrencies
 {

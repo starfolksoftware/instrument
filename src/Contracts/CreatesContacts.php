@@ -1,6 +1,6 @@
 <?php
 
-namespace StarfolkSoftware\Instrument\Contracts;
+namespace Instrument\Contracts;
 
 interface CreatesContacts
 {

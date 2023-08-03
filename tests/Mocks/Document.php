@@ -1,12 +1,12 @@
 <?php
 
-namespace StarfolkSoftware\Instrument\Tests\Mocks;
+namespace Instrument\Tests\Mocks;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use StarfolkSoftware\Instrument\Document as InstrumentDocument;
-use StarfolkSoftware\Instrument\Events\DocumentCreated;
-use StarfolkSoftware\Instrument\Events\DocumentDeleted;
-use StarfolkSoftware\Instrument\Events\DocumentUpdated;
+use Instrument\Document as InstrumentDocument;
+use Instrument\Events\DocumentCreated;
+use Instrument\Events\DocumentDeleted;
+use Instrument\Events\DocumentUpdated;
 
 class Document extends InstrumentDocument
 {

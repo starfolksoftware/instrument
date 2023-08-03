@@ -1,9 +1,9 @@
 <?php
 
-namespace StarfolkSoftware\Instrument\Contracts;
+namespace Instrument\Contracts;
 
 use Illuminate\Database\Eloquent\Model;
-use StarfolkSoftware\Instrument\Account;
+use Instrument\Account;
 
 interface UpdatesAccounts
 {

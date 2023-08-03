@@ -1,9 +1,9 @@
 <?php
 
-namespace StarfolkSoftware\Instrument\Contracts;
+namespace Instrument\Contracts;
 
 use Illuminate\Database\Eloquent\Model;
-use StarfolkSoftware\Instrument\Currency;
+use Instrument\Currency;
 
 interface DeletesCurrencies
 {

@@ -1,14 +1,14 @@
 <?php
 
-namespace StarfolkSoftware\Instrument\Actions;
+namespace Instrument\Actions;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Validator;
-use StarfolkSoftware\Instrument\Contracts\CreatesTransactions;
-use StarfolkSoftware\Instrument\Events\CreatingTransaction;
-use StarfolkSoftware\Instrument\Events\TransactionCreated;
-use StarfolkSoftware\Instrument\Instrument;
-use StarfolkSoftware\Instrument\Transaction;
+use Instrument\Contracts\CreatesTransactions;
+use Instrument\Events\CreatingTransaction;
+use Instrument\Events\TransactionCreated;
+use Instrument\Instrument;
+use Instrument\Transaction;
 
 class CreateTransaction implements CreatesTransactions
 {

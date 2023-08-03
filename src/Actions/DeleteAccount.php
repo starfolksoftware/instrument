@@ -1,12 +1,12 @@
 <?php
 
-namespace StarfolkSoftware\Instrument\Actions;
+namespace Instrument\Actions;
 
 use Illuminate\Database\Eloquent\Model;
-use StarfolkSoftware\Instrument\Account;
-use StarfolkSoftware\Instrument\Contracts\DeletesAccounts;
-use StarfolkSoftware\Instrument\Events\AccountDeleted;
-use StarfolkSoftware\Instrument\Events\DeletingAccount;
+use Instrument\Account;
+use Instrument\Contracts\DeletesAccounts;
+use Instrument\Events\AccountDeleted;
+use Instrument\Events\DeletingAccount;
 
 class DeleteAccount implements DeletesAccounts
 {

@@ -1,14 +1,14 @@
 <?php
 
-namespace StarfolkSoftware\Instrument\Actions;
+namespace Instrument\Actions;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Validator;
-use StarfolkSoftware\Instrument\Contracts\CreatesCurrencies;
-use StarfolkSoftware\Instrument\Currency;
-use StarfolkSoftware\Instrument\Events\CreatingCurrency;
-use StarfolkSoftware\Instrument\Events\CurrencyCreated;
-use StarfolkSoftware\Instrument\Instrument;
+use Instrument\Contracts\CreatesCurrencies;
+use Instrument\Currency;
+use Instrument\Events\CreatingCurrency;
+use Instrument\Events\CurrencyCreated;
+use Instrument\Instrument;
 
 class CreateCurrency implements CreatesCurrencies
 {

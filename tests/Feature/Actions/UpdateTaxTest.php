@@ -1,14 +1,14 @@
 <?php
 
 use Illuminate\Support\Facades\Event;
-use StarfolkSoftware\Instrument\Contracts\UpdatesTaxes;
-use StarfolkSoftware\Instrument\Events\TaxUpdated;
-use StarfolkSoftware\Instrument\Events\UpdatingTax;
-use StarfolkSoftware\Instrument\Tests\Mocks\Tax;
-use StarfolkSoftware\Instrument\Tests\Mocks\TestUser;
+use Instrument\Contracts\UpdatesTaxes;
+use Instrument\Events\TaxUpdated;
+use Instrument\Events\UpdatingTax;
+use Instrument\Tests\Mocks\Tax;
+use Instrument\Tests\Mocks\TestUser;
 
 beforeAll(function () {
-    \StarfolkSoftware\Instrument\Instrument::supportsTeams(false);
+    \Instrument\Instrument::supportsTeams(false);
 });
 
 it('can update an tax', function () {

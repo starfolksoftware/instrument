@@ -1,19 +1,19 @@
 <?php
 
 use Illuminate\Support\Facades\Event;
-use StarfolkSoftware\Instrument\Events\CreatingDocument;
-use StarfolkSoftware\Instrument\Events\DeletingDocument;
-use StarfolkSoftware\Instrument\Events\DocumentCreated;
-use StarfolkSoftware\Instrument\Events\DocumentDeleted;
-use StarfolkSoftware\Instrument\Events\DocumentUpdated;
-use StarfolkSoftware\Instrument\Events\UpdatingDocument;
-use StarfolkSoftware\Instrument\Tests\Mocks\Document;
-use StarfolkSoftware\Instrument\Tests\Mocks\TestUser;
+use Instrument\Events\CreatingDocument;
+use Instrument\Events\DeletingDocument;
+use Instrument\Events\DocumentCreated;
+use Instrument\Events\DocumentDeleted;
+use Instrument\Events\DocumentUpdated;
+use Instrument\Events\UpdatingDocument;
+use Instrument\Tests\Mocks\Document;
+use Instrument\Tests\Mocks\TestUser;
 
 beforeAll(function () {
-    \StarfolkSoftware\Instrument\Instrument::supportsTeams(false);
+    \Instrument\Instrument::supportsTeams(false);
 
-    \StarfolkSoftware\Instrument\Instrument::useDocumentModel(Document::class);
+    \Instrument\Instrument::useDocumentModel(Document::class);
 });
 
 test('document can be created', function () {

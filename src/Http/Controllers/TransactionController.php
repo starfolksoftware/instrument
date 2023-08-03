@@ -1,18 +1,18 @@
 <?php
 
-namespace StarfolkSoftware\Instrument\Http\Controllers;
+namespace Instrument\Http\Controllers;
 
-use StarfolkSoftware\Instrument\Contracts\CreatesTransactions;
-use StarfolkSoftware\Instrument\Contracts\DeletesTransactions;
-use StarfolkSoftware\Instrument\Contracts\UpdatesTransactions;
-use StarfolkSoftware\Instrument\Instrument;
+use Instrument\Contracts\CreatesTransactions;
+use Instrument\Contracts\DeletesTransactions;
+use Instrument\Contracts\UpdatesTransactions;
+use Instrument\Instrument;
 
 class TransactionController extends Controller
 {
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \StarfolkSoftware\Instrument\Contracts\CreatesTransactions  $createsTransactions
+     * @param  \Instrument\Contracts\CreatesTransactions  $createsTransactions
      * @return \Illuminate\Http\RedirectResponse
      */
     public function store(CreatesTransactions $createsTransactions)
@@ -32,7 +32,7 @@ class TransactionController extends Controller
      * Update the specified resource in storage.
      *
      * @param  mixed  $account
-     * @param  \StarfolkSoftware\Instrument\Contracts\UpdatesTransactions  $updatesTransactions
+     * @param  \Instrument\Contracts\UpdatesTransactions  $updatesTransactions
      * @return \Illuminate\Http\RedirectResponse
      */
     public function update($account, UpdatesTransactions $updatesTransactions)
@@ -54,7 +54,7 @@ class TransactionController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  mixed  $account
-     * @param  \StarfolkSoftware\Instrument\Contracts\DeletesTransactions  $deletesTransactions
+     * @param  \Instrument\Contracts\DeletesTransactions  $deletesTransactions
      * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy($account, DeletesTransactions $deletesTransactions)

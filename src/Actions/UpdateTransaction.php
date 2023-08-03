@@ -1,13 +1,13 @@
 <?php
 
-namespace StarfolkSoftware\Instrument\Actions;
+namespace Instrument\Actions;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Validator;
-use StarfolkSoftware\Instrument\Contracts\UpdatesTransactions;
-use StarfolkSoftware\Instrument\Events\TransactionUpdated;
-use StarfolkSoftware\Instrument\Events\UpdatingTransaction;
-use StarfolkSoftware\Instrument\Transaction;
+use Instrument\Contracts\UpdatesTransactions;
+use Instrument\Events\TransactionUpdated;
+use Instrument\Events\UpdatingTransaction;
+use Instrument\Transaction;
 
 class UpdateTransaction implements UpdatesTransactions
 {

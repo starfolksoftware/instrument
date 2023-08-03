@@ -3,10 +3,10 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use StarfolkSoftware\Instrument\Account as InstrumentAccount;
-use StarfolkSoftware\Instrument\Events\AccountCreated;
-use StarfolkSoftware\Instrument\Events\AccountDeleted;
-use StarfolkSoftware\Instrument\Events\AccountUpdated;
+use Instrument\Account as InstrumentAccount;
+use Instrument\Events\AccountCreated;
+use Instrument\Events\AccountDeleted;
+use Instrument\Events\AccountUpdated;
 
 class Account extends InstrumentAccount
 {

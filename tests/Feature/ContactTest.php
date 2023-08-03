@@ -1,19 +1,19 @@
 <?php
 
 use Illuminate\Support\Facades\Event;
-use StarfolkSoftware\Instrument\Events\ContactCreated;
-use StarfolkSoftware\Instrument\Events\ContactDeleted;
-use StarfolkSoftware\Instrument\Events\ContactUpdated;
-use StarfolkSoftware\Instrument\Events\CreatingContact;
-use StarfolkSoftware\Instrument\Events\DeletingContact;
-use StarfolkSoftware\Instrument\Events\UpdatingContact;
-use StarfolkSoftware\Instrument\Tests\Mocks\Contact;
-use StarfolkSoftware\Instrument\Tests\Mocks\TestUser;
+use Instrument\Events\ContactCreated;
+use Instrument\Events\ContactDeleted;
+use Instrument\Events\ContactUpdated;
+use Instrument\Events\CreatingContact;
+use Instrument\Events\DeletingContact;
+use Instrument\Events\UpdatingContact;
+use Instrument\Tests\Mocks\Contact;
+use Instrument\Tests\Mocks\TestUser;
 
 beforeAll(function () {
-    \StarfolkSoftware\Instrument\Instrument::supportsTeams(false);
+    \Instrument\Instrument::supportsTeams(false);
 
-    \StarfolkSoftware\Instrument\Instrument::useContactModel(Contact::class);
+    \Instrument\Instrument::useContactModel(Contact::class);
 });
 
 test('contact can be created', function () {

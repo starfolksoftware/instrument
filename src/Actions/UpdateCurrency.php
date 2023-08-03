@@ -1,13 +1,13 @@
 <?php
 
-namespace StarfolkSoftware\Instrument\Actions;
+namespace Instrument\Actions;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Validator;
-use StarfolkSoftware\Instrument\Contracts\UpdatesCurrencies;
-use StarfolkSoftware\Instrument\Currency;
-use StarfolkSoftware\Instrument\Events\CurrencyUpdated;
-use StarfolkSoftware\Instrument\Events\UpdatingCurrency;
+use Instrument\Contracts\UpdatesCurrencies;
+use Instrument\Currency;
+use Instrument\Events\CurrencyUpdated;
+use Instrument\Events\UpdatingCurrency;
 
 class UpdateCurrency implements UpdatesCurrencies
 {

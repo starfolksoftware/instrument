@@ -1,14 +1,14 @@
 <?php
 
 use Illuminate\Support\Facades\Event;
-use StarfolkSoftware\Instrument\Contracts\UpdatesCurrencies;
-use StarfolkSoftware\Instrument\Events\CurrencyUpdated;
-use StarfolkSoftware\Instrument\Events\UpdatingCurrency;
-use StarfolkSoftware\Instrument\Tests\Mocks\Currency;
-use StarfolkSoftware\Instrument\Tests\Mocks\TestUser;
+use Instrument\Contracts\UpdatesCurrencies;
+use Instrument\Events\CurrencyUpdated;
+use Instrument\Events\UpdatingCurrency;
+use Instrument\Tests\Mocks\Currency;
+use Instrument\Tests\Mocks\TestUser;
 
 beforeAll(function () {
-    \StarfolkSoftware\Instrument\Instrument::supportsTeams(false);
+    \Instrument\Instrument::supportsTeams(false);
 });
 
 it('can update an currency', function () {

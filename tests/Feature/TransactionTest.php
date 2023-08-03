@@ -1,19 +1,19 @@
 <?php
 
 use Illuminate\Support\Facades\Event;
-use StarfolkSoftware\Instrument\Events\CreatingTransaction;
-use StarfolkSoftware\Instrument\Events\DeletingTransaction;
-use StarfolkSoftware\Instrument\Events\TransactionCreated;
-use StarfolkSoftware\Instrument\Events\TransactionDeleted;
-use StarfolkSoftware\Instrument\Events\TransactionUpdated;
-use StarfolkSoftware\Instrument\Events\UpdatingTransaction;
-use StarfolkSoftware\Instrument\Tests\Mocks\TestUser;
-use StarfolkSoftware\Instrument\Tests\Mocks\Transaction;
+use Instrument\Events\CreatingTransaction;
+use Instrument\Events\DeletingTransaction;
+use Instrument\Events\TransactionCreated;
+use Instrument\Events\TransactionDeleted;
+use Instrument\Events\TransactionUpdated;
+use Instrument\Events\UpdatingTransaction;
+use Instrument\Tests\Mocks\TestUser;
+use Instrument\Tests\Mocks\Transaction;
 
 beforeAll(function () {
-    \StarfolkSoftware\Instrument\Instrument::supportsTeams(false);
+    \Instrument\Instrument::supportsTeams(false);
 
-    \StarfolkSoftware\Instrument\Instrument::useTransactionModel(Transaction::class);
+    \Instrument\Instrument::useTransactionModel(Transaction::class);
 });
 
 test('transaction can be created', function () {

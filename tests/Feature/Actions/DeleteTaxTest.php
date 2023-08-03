@@ -1,15 +1,15 @@
 <?php
 
 use Illuminate\Support\Facades\Event;
-use StarfolkSoftware\Instrument\Contracts\DeletesTaxes;
-use StarfolkSoftware\Instrument\Events\DeletingTax;
-use StarfolkSoftware\Instrument\Events\TaxDeleted;
-use StarfolkSoftware\Instrument\Tests\Mocks\Tax;
-use StarfolkSoftware\Instrument\Tests\Mocks\TestUser;
+use Instrument\Contracts\DeletesTaxes;
+use Instrument\Events\DeletingTax;
+use Instrument\Events\TaxDeleted;
+use Instrument\Tests\Mocks\Tax;
+use Instrument\Tests\Mocks\TestUser;
 
 beforeAll(function () {
-    \StarfolkSoftware\Instrument\Instrument::supportsTeams(false);
-    \StarfolkSoftware\Instrument\Instrument::useTaxModel(Tax::class);
+    \Instrument\Instrument::supportsTeams(false);
+    \Instrument\Instrument::useTaxModel(Tax::class);
 });
 
 it('can delete an tax', function () {

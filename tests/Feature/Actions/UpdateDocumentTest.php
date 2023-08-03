@@ -1,14 +1,14 @@
 <?php
 
 use Illuminate\Support\Facades\Event;
-use StarfolkSoftware\Instrument\Contracts\UpdatesDocuments;
-use StarfolkSoftware\Instrument\Events\DocumentUpdated;
-use StarfolkSoftware\Instrument\Events\UpdatingDocument;
-use StarfolkSoftware\Instrument\Tests\Mocks\Document;
-use StarfolkSoftware\Instrument\Tests\Mocks\TestUser;
+use Instrument\Contracts\UpdatesDocuments;
+use Instrument\Events\DocumentUpdated;
+use Instrument\Events\UpdatingDocument;
+use Instrument\Tests\Mocks\Document;
+use Instrument\Tests\Mocks\TestUser;
 
 beforeAll(function () {
-    \StarfolkSoftware\Instrument\Instrument::supportsTeams(false);
+    \Instrument\Instrument::supportsTeams(false);
 });
 
 it('can update a document', function () {

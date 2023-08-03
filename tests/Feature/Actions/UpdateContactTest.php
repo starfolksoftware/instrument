@@ -1,14 +1,14 @@
 <?php
 
 use Illuminate\Support\Facades\Event;
-use StarfolkSoftware\Instrument\Contracts\UpdatesContacts;
-use StarfolkSoftware\Instrument\Events\ContactUpdated;
-use StarfolkSoftware\Instrument\Events\UpdatingContact;
-use StarfolkSoftware\Instrument\Tests\Mocks\Contact;
-use StarfolkSoftware\Instrument\Tests\Mocks\TestUser;
+use Instrument\Contracts\UpdatesContacts;
+use Instrument\Events\ContactUpdated;
+use Instrument\Events\UpdatingContact;
+use Instrument\Tests\Mocks\Contact;
+use Instrument\Tests\Mocks\TestUser;
 
 beforeAll(function () {
-    \StarfolkSoftware\Instrument\Instrument::supportsTeams(false);
+    \Instrument\Instrument::supportsTeams(false);
 });
 
 it('can update an contact', function () {
