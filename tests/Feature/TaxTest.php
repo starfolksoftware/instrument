@@ -1,19 +1,19 @@
 <?php
 
 use Illuminate\Support\Facades\Event;
-use StarfolkSoftware\Instrument\Events\CreatingTax;
-use StarfolkSoftware\Instrument\Events\DeletingTax;
-use StarfolkSoftware\Instrument\Events\TaxCreated;
-use StarfolkSoftware\Instrument\Events\TaxDeleted;
-use StarfolkSoftware\Instrument\Events\TaxUpdated;
-use StarfolkSoftware\Instrument\Events\UpdatingTax;
-use StarfolkSoftware\Instrument\Tests\Mocks\Tax;
-use StarfolkSoftware\Instrument\Tests\Mocks\TestUser;
+use Instrument\Events\CreatingTax;
+use Instrument\Events\DeletingTax;
+use Instrument\Events\TaxCreated;
+use Instrument\Events\TaxDeleted;
+use Instrument\Events\TaxUpdated;
+use Instrument\Events\UpdatingTax;
+use Instrument\Tests\Mocks\Tax;
+use Instrument\Tests\Mocks\TestUser;
 
 beforeAll(function () {
-    \StarfolkSoftware\Instrument\Instrument::supportsTeams(false);
+    \Instrument\Instrument::supportsTeams(false);
 
-    \StarfolkSoftware\Instrument\Instrument::useTaxModel(Tax::class);
+    \Instrument\Instrument::useTaxModel(Tax::class);
 });
 
 test('tax can be created', function () {

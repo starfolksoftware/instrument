@@ -1,13 +1,13 @@
 <?php
 
-namespace StarfolkSoftware\Instrument\Actions;
+namespace Instrument\Actions;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Validator;
-use StarfolkSoftware\Instrument\Contracts\UpdatesDocuments;
-use StarfolkSoftware\Instrument\Document;
-use StarfolkSoftware\Instrument\Events\DocumentUpdated;
-use StarfolkSoftware\Instrument\Events\UpdatingDocument;
+use Instrument\Contracts\UpdatesDocuments;
+use Instrument\Document;
+use Instrument\Events\DocumentUpdated;
+use Instrument\Events\UpdatingDocument;
 
 class UpdateDocument implements UpdatesDocuments
 {

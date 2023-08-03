@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use StarfolkSoftware\Instrument\Http\Controllers;
+use Instrument\Http\Controllers;
 
 Route::group([
     'middleware' => config('instrument.middleware', ['web']),

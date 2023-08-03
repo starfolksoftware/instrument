@@ -1,6 +1,6 @@
 <?php
 
-namespace StarfolkSoftware\Instrument;
+namespace Instrument;
 
 use Illuminate\Database\Eloquent\Model;
 

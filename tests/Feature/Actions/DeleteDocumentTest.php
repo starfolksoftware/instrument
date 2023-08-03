@@ -1,15 +1,15 @@
 <?php
 
 use Illuminate\Support\Facades\Event;
-use StarfolkSoftware\Instrument\Contracts\DeletesDocuments;
-use StarfolkSoftware\Instrument\Events\DeletingDocument;
-use StarfolkSoftware\Instrument\Events\DocumentDeleted;
-use StarfolkSoftware\Instrument\Tests\Mocks\Document;
-use StarfolkSoftware\Instrument\Tests\Mocks\TestUser;
+use Instrument\Contracts\DeletesDocuments;
+use Instrument\Events\DeletingDocument;
+use Instrument\Events\DocumentDeleted;
+use Instrument\Tests\Mocks\Document;
+use Instrument\Tests\Mocks\TestUser;
 
 beforeAll(function () {
-    \StarfolkSoftware\Instrument\Instrument::supportsTeams(false);
-    \StarfolkSoftware\Instrument\Instrument::useDocumentModel(Document::class);
+    \Instrument\Instrument::supportsTeams(false);
+    \Instrument\Instrument::useDocumentModel(Document::class);
 });
 
 it('can delete a document', function () {

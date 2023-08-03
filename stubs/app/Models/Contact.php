@@ -3,10 +3,10 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use StarfolkSoftware\Instrument\Contact as InstrumentContact;
-use StarfolkSoftware\Instrument\Events\ContactCreated;
-use StarfolkSoftware\Instrument\Events\ContactDeleted;
-use StarfolkSoftware\Instrument\Events\ContactUpdated;
+use Instrument\Contact as InstrumentContact;
+use Instrument\Events\ContactCreated;
+use Instrument\Events\ContactDeleted;
+use Instrument\Events\ContactUpdated;
 
 class Contact extends InstrumentContact
 {

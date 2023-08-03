@@ -3,10 +3,10 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use StarfolkSoftware\Instrument\Transaction as InstrumentTransaction;
-use StarfolkSoftware\Instrument\Events\TransactionCreated;
-use StarfolkSoftware\Instrument\Events\TransactionDeleted;
-use StarfolkSoftware\Instrument\Events\TransactionUpdated;
+use Instrument\Transaction as InstrumentTransaction;
+use Instrument\Events\TransactionCreated;
+use Instrument\Events\TransactionDeleted;
+use Instrument\Events\TransactionUpdated;
 
 class Transaction extends InstrumentTransaction
 {

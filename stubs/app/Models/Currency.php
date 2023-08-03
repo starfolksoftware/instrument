@@ -3,10 +3,10 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use StarfolkSoftware\Instrument\Currency as InstrumentCurrency;
-use StarfolkSoftware\Instrument\Events\CurrencyCreated;
-use StarfolkSoftware\Instrument\Events\CurrencyDeleted;
-use StarfolkSoftware\Instrument\Events\CurrencyUpdated;
+use Instrument\Currency as InstrumentCurrency;
+use Instrument\Events\CurrencyCreated;
+use Instrument\Events\CurrencyDeleted;
+use Instrument\Events\CurrencyUpdated;
 
 class Currency extends InstrumentCurrency
 {

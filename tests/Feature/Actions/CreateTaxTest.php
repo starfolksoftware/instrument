@@ -1,16 +1,16 @@
 <?php
 
 use Illuminate\Support\Facades\Event;
-use StarfolkSoftware\Instrument\Contracts\CreatesTaxes;
-use StarfolkSoftware\Instrument\Events\CreatingTax;
-use StarfolkSoftware\Instrument\Events\TaxCreated;
-use StarfolkSoftware\Instrument\Tests\Mocks\Tax;
-use StarfolkSoftware\Instrument\Tests\Mocks\TestUser;
+use Instrument\Contracts\CreatesTaxes;
+use Instrument\Events\CreatingTax;
+use Instrument\Events\TaxCreated;
+use Instrument\Tests\Mocks\Tax;
+use Instrument\Tests\Mocks\TestUser;
 
 beforeAll(function () {
-    \StarfolkSoftware\Instrument\Instrument::supportsTeams(false);
+    \Instrument\Instrument::supportsTeams(false);
 
-    \StarfolkSoftware\Instrument\Instrument::useTaxModel(Tax::class);
+    \Instrument\Instrument::useTaxModel(Tax::class);
 });
 
 it('can create an tax', function () {

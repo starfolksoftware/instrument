@@ -1,13 +1,13 @@
 <?php
 
-namespace StarfolkSoftware\Instrument\Actions;
+namespace Instrument\Actions;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Validator;
-use StarfolkSoftware\Instrument\Contracts\UpdatesTaxes;
-use StarfolkSoftware\Instrument\Events\TaxUpdated;
-use StarfolkSoftware\Instrument\Events\UpdatingTax;
-use StarfolkSoftware\Instrument\Tax;
+use Instrument\Contracts\UpdatesTaxes;
+use Instrument\Events\TaxUpdated;
+use Instrument\Events\UpdatingTax;
+use Instrument\Tax;
 
 class UpdateTax implements UpdatesTaxes
 {

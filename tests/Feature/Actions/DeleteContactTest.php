@@ -1,15 +1,15 @@
 <?php
 
 use Illuminate\Support\Facades\Event;
-use StarfolkSoftware\Instrument\Contracts\DeletesContacts;
-use StarfolkSoftware\Instrument\Events\ContactDeleted;
-use StarfolkSoftware\Instrument\Events\DeletingContact;
-use StarfolkSoftware\Instrument\Tests\Mocks\Contact;
-use StarfolkSoftware\Instrument\Tests\Mocks\TestUser;
+use Instrument\Contracts\DeletesContacts;
+use Instrument\Events\ContactDeleted;
+use Instrument\Events\DeletingContact;
+use Instrument\Tests\Mocks\Contact;
+use Instrument\Tests\Mocks\TestUser;
 
 beforeAll(function () {
-    \StarfolkSoftware\Instrument\Instrument::supportsTeams(false);
-    \StarfolkSoftware\Instrument\Instrument::useContactModel(Contact::class);
+    \Instrument\Instrument::supportsTeams(false);
+    \Instrument\Instrument::useContactModel(Contact::class);
 });
 
 it('can delete an contact', function () {

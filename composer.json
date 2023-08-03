@@ -32,13 +32,13 @@
     },
     "autoload": {
         "psr-4": {
-            "StarfolkSoftware\\Instrument\\": "src",
-            "StarfolkSoftware\\Instrument\\Database\\Factories\\": "database/factories"
+            "Instrument\\": "src",
+            "Instrument\\Database\\Factories\\": "database/factories"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "StarfolkSoftware\\Instrument\\Tests\\": "tests"
+            "Instrument\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -56,10 +56,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "StarfolkSoftware\\Instrument\\InstrumentServiceProvider"
+                "Instrument\\InstrumentServiceProvider"
             ],
             "aliases": {
-                "Instrument": "StarfolkSoftware\\Instrument\\Facades\\Instrument"
+                "Instrument": "Instrument\\Facades\\Instrument"
             }
         }
     },

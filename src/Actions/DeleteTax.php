@@ -1,12 +1,12 @@
 <?php
 
-namespace StarfolkSoftware\Instrument\Actions;
+namespace Instrument\Actions;
 
 use Illuminate\Database\Eloquent\Model;
-use StarfolkSoftware\Instrument\Contracts\DeletesTaxes;
-use StarfolkSoftware\Instrument\Events\DeletingTax;
-use StarfolkSoftware\Instrument\Events\TaxDeleted;
-use StarfolkSoftware\Instrument\Tax;
+use Instrument\Contracts\DeletesTaxes;
+use Instrument\Events\DeletingTax;
+use Instrument\Events\TaxDeleted;
+use Instrument\Tax;
 
 class DeleteTax implements DeletesTaxes
 {

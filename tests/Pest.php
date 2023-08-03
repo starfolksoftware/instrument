@@ -1,13 +1,13 @@
 <?php
 
 use Illuminate\Contracts\Auth\Authenticatable;
-use StarfolkSoftware\Instrument\Tests\Mocks\Account;
-use StarfolkSoftware\Instrument\Tests\Mocks\Contact;
-use StarfolkSoftware\Instrument\Tests\Mocks\Currency;
-use StarfolkSoftware\Instrument\Tests\Mocks\Document;
-use StarfolkSoftware\Instrument\Tests\Mocks\Tax;
-use StarfolkSoftware\Instrument\Tests\Mocks\Transaction;
-use StarfolkSoftware\Instrument\Tests\TestCase;
+use Instrument\Tests\Mocks\Account;
+use Instrument\Tests\Mocks\Contact;
+use Instrument\Tests\Mocks\Currency;
+use Instrument\Tests\Mocks\Document;
+use Instrument\Tests\Mocks\Tax;
+use Instrument\Tests\Mocks\Transaction;
+use Instrument\Tests\TestCase;
 
 uses(TestCase::class)->in(__DIR__);
 

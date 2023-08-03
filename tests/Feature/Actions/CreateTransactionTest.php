@@ -1,16 +1,16 @@
 <?php
 
 use Illuminate\Support\Facades\Event;
-use StarfolkSoftware\Instrument\Contracts\CreatesTransactions;
-use StarfolkSoftware\Instrument\Events\CreatingTransaction;
-use StarfolkSoftware\Instrument\Events\TransactionCreated;
-use StarfolkSoftware\Instrument\Tests\Mocks\TestUser;
-use StarfolkSoftware\Instrument\Tests\Mocks\Transaction;
+use Instrument\Contracts\CreatesTransactions;
+use Instrument\Events\CreatingTransaction;
+use Instrument\Events\TransactionCreated;
+use Instrument\Tests\Mocks\TestUser;
+use Instrument\Tests\Mocks\Transaction;
 
 beforeAll(function () {
-    \StarfolkSoftware\Instrument\Instrument::supportsTeams(false);
+    \Instrument\Instrument::supportsTeams(false);
 
-    \StarfolkSoftware\Instrument\Instrument::useTransactionModel(Transaction::class);
+    \Instrument\Instrument::useTransactionModel(Transaction::class);
 });
 
 it('can create an transaction', function () {

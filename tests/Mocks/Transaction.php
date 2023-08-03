@@ -1,12 +1,12 @@
 <?php
 
-namespace StarfolkSoftware\Instrument\Tests\Mocks;
+namespace Instrument\Tests\Mocks;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use StarfolkSoftware\Instrument\Events\TransactionCreated;
-use StarfolkSoftware\Instrument\Events\TransactionDeleted;
-use StarfolkSoftware\Instrument\Events\TransactionUpdated;
-use StarfolkSoftware\Instrument\Transaction as InstrumentTransaction;
+use Instrument\Events\TransactionCreated;
+use Instrument\Events\TransactionDeleted;
+use Instrument\Events\TransactionUpdated;
+use Instrument\Transaction as InstrumentTransaction;
 
 class Transaction extends InstrumentTransaction
 {

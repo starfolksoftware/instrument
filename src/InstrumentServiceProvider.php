@@ -1,10 +1,10 @@
 <?php
 
-namespace StarfolkSoftware\Instrument;
+namespace Instrument;
 
+use Instrument\Commands\InstallCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use StarfolkSoftware\Instrument\Commands\InstallCommand;
 
 class InstrumentServiceProvider extends PackageServiceProvider
 {

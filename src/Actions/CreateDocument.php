@@ -1,14 +1,14 @@
 <?php
 
-namespace StarfolkSoftware\Instrument\Actions;
+namespace Instrument\Actions;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Validator;
-use StarfolkSoftware\Instrument\Contracts\CreatesDocuments;
-use StarfolkSoftware\Instrument\Document;
-use StarfolkSoftware\Instrument\Events\CreatingDocument;
-use StarfolkSoftware\Instrument\Events\DocumentCreated;
-use StarfolkSoftware\Instrument\Instrument;
+use Instrument\Contracts\CreatesDocuments;
+use Instrument\Document;
+use Instrument\Events\CreatingDocument;
+use Instrument\Events\DocumentCreated;
+use Instrument\Instrument;
 
 class CreateDocument implements CreatesDocuments
 {

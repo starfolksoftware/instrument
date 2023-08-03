@@ -1,6 +1,6 @@
 <?php
 
-namespace StarfolkSoftware\Instrument;
+namespace Instrument;
 
 trait TeamHasInstruments
 {

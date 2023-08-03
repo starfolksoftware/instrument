@@ -1,13 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Event;
-use StarfolkSoftware\Instrument\Contracts\CreatesAccounts;
-use StarfolkSoftware\Instrument\Events\AccountCreated;
-use StarfolkSoftware\Instrument\Events\CreatingAccount;
-use StarfolkSoftware\Instrument\Instrument;
-use StarfolkSoftware\Instrument\Tests\Mocks\Account;
-use StarfolkSoftware\Instrument\Tests\Mocks\TeamModel;
-use StarfolkSoftware\Instrument\Tests\Mocks\TestUser;
+use Instrument\Contracts\CreatesAccounts;
+use Instrument\Events\AccountCreated;
+use Instrument\Events\CreatingAccount;
+use Instrument\Instrument;
+use Instrument\Tests\Mocks\Account;
+use Instrument\Tests\Mocks\TeamModel;
+use Instrument\Tests\Mocks\TestUser;
 
 beforeAll(function () {
     Instrument::supportsTeams(true);

@@ -1,14 +1,14 @@
 <?php
 
 use Illuminate\Support\Facades\Event;
-use StarfolkSoftware\Instrument\Contracts\UpdatesTransactions;
-use StarfolkSoftware\Instrument\Events\TransactionUpdated;
-use StarfolkSoftware\Instrument\Events\UpdatingTransaction;
-use StarfolkSoftware\Instrument\Tests\Mocks\TestUser;
-use StarfolkSoftware\Instrument\Tests\Mocks\Transaction;
+use Instrument\Contracts\UpdatesTransactions;
+use Instrument\Events\TransactionUpdated;
+use Instrument\Events\UpdatingTransaction;
+use Instrument\Tests\Mocks\TestUser;
+use Instrument\Tests\Mocks\Transaction;
 
 beforeAll(function () {
-    \StarfolkSoftware\Instrument\Instrument::supportsTeams(false);
+    \Instrument\Instrument::supportsTeams(false);
 });
 
 it('can update an transaction', function () {

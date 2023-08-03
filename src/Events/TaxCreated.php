@@ -1,6 +1,6 @@
 <?php
 
-namespace StarfolkSoftware\Instrument\Events;
+namespace Instrument\Events;
 
 class TaxCreated extends TaxEvent
 {

@@ -1,13 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Event;
-use StarfolkSoftware\Instrument\Contracts\CreatesDocuments;
-use StarfolkSoftware\Instrument\Events\CreatingDocument;
-use StarfolkSoftware\Instrument\Events\DocumentCreated;
-use StarfolkSoftware\Instrument\Instrument;
-use StarfolkSoftware\Instrument\Tests\Mocks\Document;
-use StarfolkSoftware\Instrument\Tests\Mocks\TeamModel;
-use StarfolkSoftware\Instrument\Tests\Mocks\TestUser;
+use Instrument\Contracts\CreatesDocuments;
+use Instrument\Events\CreatingDocument;
+use Instrument\Events\DocumentCreated;
+use Instrument\Instrument;
+use Instrument\Tests\Mocks\Document;
+use Instrument\Tests\Mocks\TeamModel;
+use Instrument\Tests\Mocks\TestUser;
 
 beforeAll(function () {
     Instrument::supportsTeams(true);

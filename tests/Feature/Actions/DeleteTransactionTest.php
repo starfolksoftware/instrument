@@ -1,15 +1,15 @@
 <?php
 
 use Illuminate\Support\Facades\Event;
-use StarfolkSoftware\Instrument\Contracts\DeletesTransactions;
-use StarfolkSoftware\Instrument\Events\DeletingTransaction;
-use StarfolkSoftware\Instrument\Events\TransactionDeleted;
-use StarfolkSoftware\Instrument\Tests\Mocks\TestUser;
-use StarfolkSoftware\Instrument\Tests\Mocks\Transaction;
+use Instrument\Contracts\DeletesTransactions;
+use Instrument\Events\DeletingTransaction;
+use Instrument\Events\TransactionDeleted;
+use Instrument\Tests\Mocks\TestUser;
+use Instrument\Tests\Mocks\Transaction;
 
 beforeAll(function () {
-    \StarfolkSoftware\Instrument\Instrument::supportsTeams(false);
-    \StarfolkSoftware\Instrument\Instrument::useTransactionModel(Transaction::class);
+    \Instrument\Instrument::supportsTeams(false);
+    \Instrument\Instrument::useTransactionModel(Transaction::class);
 });
 
 it('can delete an transaction', function () {

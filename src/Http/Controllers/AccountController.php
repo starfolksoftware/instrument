@@ -1,18 +1,18 @@
 <?php
 
-namespace StarfolkSoftware\Instrument\Http\Controllers;
+namespace Instrument\Http\Controllers;
 
-use StarfolkSoftware\Instrument\Contracts\CreatesAccounts;
-use StarfolkSoftware\Instrument\Contracts\DeletesAccounts;
-use StarfolkSoftware\Instrument\Contracts\UpdatesAccounts;
-use StarfolkSoftware\Instrument\Instrument;
+use Instrument\Contracts\CreatesAccounts;
+use Instrument\Contracts\DeletesAccounts;
+use Instrument\Contracts\UpdatesAccounts;
+use Instrument\Instrument;
 
 class AccountController extends Controller
 {
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \StarfolkSoftware\Instrument\Contracts\CreatesAccounts  $createsAccounts
+     * @param  \Instrument\Contracts\CreatesAccounts  $createsAccounts
      * @return \Illuminate\Http\RedirectResponse
      */
     public function store(CreatesAccounts $createsAccounts)
@@ -32,7 +32,7 @@ class AccountController extends Controller
      * Update the specified resource in storage.
      *
      * @param  mixed  $account
-     * @param  \StarfolkSoftware\Instrument\Contracts\UpdatesAccounts  $updatesAccounts
+     * @param  \Instrument\Contracts\UpdatesAccounts  $updatesAccounts
      * @return \Illuminate\Http\RedirectResponse
      */
     public function update($account, UpdatesAccounts $updatesAccounts)
@@ -54,7 +54,7 @@ class AccountController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  mixed  $account
-     * @param  \StarfolkSoftware\Instrument\Contracts\DeletesAccounts  $deletesAccounts
+     * @param  \Instrument\Contracts\DeletesAccounts  $deletesAccounts
      * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy($account, DeletesAccounts $deletesAccounts)

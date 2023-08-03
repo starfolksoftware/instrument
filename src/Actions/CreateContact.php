@@ -1,12 +1,12 @@
 <?php
 
-namespace StarfolkSoftware\Instrument\Actions;
+namespace Instrument\Actions;
 
 use Illuminate\Support\Facades\Validator;
-use StarfolkSoftware\Instrument\Contracts\CreatesContacts;
-use StarfolkSoftware\Instrument\Events\ContactCreated;
-use StarfolkSoftware\Instrument\Events\CreatingContact;
-use StarfolkSoftware\Instrument\Instrument;
+use Instrument\Contracts\CreatesContacts;
+use Instrument\Events\ContactCreated;
+use Instrument\Events\CreatingContact;
+use Instrument\Instrument;
 
 class CreateContact implements CreatesContacts
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace StarfolkSoftware\Instrument\Tests\Mocks;
+namespace Instrument\Tests\Mocks;
 
 use Illuminate\Foundation\Auth\User;
 

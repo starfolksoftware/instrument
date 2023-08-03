@@ -1,19 +1,19 @@
 <?php
 
 use Illuminate\Support\Facades\Event;
-use StarfolkSoftware\Instrument\Events\CreatingCurrency;
-use StarfolkSoftware\Instrument\Events\CurrencyCreated;
-use StarfolkSoftware\Instrument\Events\CurrencyDeleted;
-use StarfolkSoftware\Instrument\Events\CurrencyUpdated;
-use StarfolkSoftware\Instrument\Events\DeletingCurrency;
-use StarfolkSoftware\Instrument\Events\UpdatingCurrency;
-use StarfolkSoftware\Instrument\Tests\Mocks\Currency;
-use StarfolkSoftware\Instrument\Tests\Mocks\TestUser;
+use Instrument\Events\CreatingCurrency;
+use Instrument\Events\CurrencyCreated;
+use Instrument\Events\CurrencyDeleted;
+use Instrument\Events\CurrencyUpdated;
+use Instrument\Events\DeletingCurrency;
+use Instrument\Events\UpdatingCurrency;
+use Instrument\Tests\Mocks\Currency;
+use Instrument\Tests\Mocks\TestUser;
 
 beforeAll(function () {
-    \StarfolkSoftware\Instrument\Instrument::supportsTeams(false);
+    \Instrument\Instrument::supportsTeams(false);
 
-    \StarfolkSoftware\Instrument\Instrument::useCurrencyModel(Currency::class);
+    \Instrument\Instrument::useCurrencyModel(Currency::class);
 });
 
 test('currency can be created', function () {

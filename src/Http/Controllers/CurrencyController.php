@@ -1,13 +1,13 @@
 <?php
 
-namespace StarfolkSoftware\Instrument\Http\Controllers;
+namespace Instrument\Http\Controllers;
 
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
-use StarfolkSoftware\Instrument\Contracts\CreatesCurrencies;
-use StarfolkSoftware\Instrument\Contracts\DeletesCurrencies;
-use StarfolkSoftware\Instrument\Contracts\UpdatesCurrencies;
-use StarfolkSoftware\Instrument\Instrument;
+use Instrument\Contracts\CreatesCurrencies;
+use Instrument\Contracts\DeletesCurrencies;
+use Instrument\Contracts\UpdatesCurrencies;
+use Instrument\Instrument;
 
 class CurrencyController extends Controller
 {

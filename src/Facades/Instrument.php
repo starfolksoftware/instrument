@@ -1,11 +1,11 @@
 <?php
 
-namespace StarfolkSoftware\Instrument\Facades;
+namespace Instrument\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \StarfolkSoftware\Instrument\Instrument
+ * @see \Instrument\Instrument
  */
 class Instrument extends Facade
 {

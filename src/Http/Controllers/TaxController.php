@@ -1,18 +1,18 @@
 <?php
 
-namespace StarfolkSoftware\Instrument\Http\Controllers;
+namespace Instrument\Http\Controllers;
 
-use StarfolkSoftware\Instrument\Contracts\CreatesTaxes;
-use StarfolkSoftware\Instrument\Contracts\DeletesTaxes;
-use StarfolkSoftware\Instrument\Contracts\UpdatesTaxes;
-use StarfolkSoftware\Instrument\Instrument;
+use Instrument\Contracts\CreatesTaxes;
+use Instrument\Contracts\DeletesTaxes;
+use Instrument\Contracts\UpdatesTaxes;
+use Instrument\Instrument;
 
 class TaxController extends Controller
 {
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \StarfolkSoftware\Instrument\Contracts\CreatesTaxes  $createsTaxes
+     * @param  \Instrument\Contracts\CreatesTaxes  $createsTaxes
      * @return \Illuminate\Http\RedirectResponse
      */
     public function store(CreatesTaxes $createsTaxes)
@@ -32,7 +32,7 @@ class TaxController extends Controller
      * Update the specified resource in storage.
      *
      * @param  mixed  $tax
-     * @param  \StarfolkSoftware\Instrument\Contracts\UpdatesTaxes  $updatesTaxes
+     * @param  \Instrument\Contracts\UpdatesTaxes  $updatesTaxes
      * @return \Illuminate\Http\RedirectResponse
      */
     public function update(mixed $tax, UpdatesTaxes $updatesTaxes)
@@ -54,7 +54,7 @@ class TaxController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  mixed  $tax
-     * @param  \StarfolkSoftware\Instrument\Contracts\DeletesTaxes  $deletesTaxes
+     * @param  \Instrument\Contracts\DeletesTaxes  $deletesTaxes
      * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy(mixed $tax, DeletesTaxes $deletesTaxes)

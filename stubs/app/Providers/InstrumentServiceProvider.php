@@ -8,7 +8,7 @@ use App\Models\Document;
 use App\Models\Tax;
 use App\Models\Transaction;
 use Illuminate\Support\ServiceProvider;
-use StarfolkSoftware\Instrument\Instrument;
+use Instrument\Instrument;
 
 class InstrumentServiceProvider extends ServiceProvider
 {

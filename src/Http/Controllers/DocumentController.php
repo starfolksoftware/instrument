@@ -1,18 +1,18 @@
 <?php
 
-namespace StarfolkSoftware\Instrument\Http\Controllers;
+namespace Instrument\Http\Controllers;
 
-use StarfolkSoftware\Instrument\Contracts\CreatesDocuments;
-use StarfolkSoftware\Instrument\Contracts\DeletesDocuments;
-use StarfolkSoftware\Instrument\Contracts\UpdatesDocuments;
-use StarfolkSoftware\Instrument\Instrument;
+use Instrument\Contracts\CreatesDocuments;
+use Instrument\Contracts\DeletesDocuments;
+use Instrument\Contracts\UpdatesDocuments;
+use Instrument\Instrument;
 
 class DocumentController extends Controller
 {
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \StarfolkSoftware\Instrument\Contracts\CreatesDocuments  $createsDocuments
+     * @param  \Instrument\Contracts\CreatesDocuments  $createsDocuments
      * @return \Illuminate\Http\RedirectResponse
      */
     public function store(CreatesDocuments $createsDocuments)
@@ -32,7 +32,7 @@ class DocumentController extends Controller
      * Update the specified resource in storage.
      *
      * @param  mixed  $document
-     * @param  \StarfolkSoftware\Instrument\Contracts\UpdatesDocuments  $updatesDocuments
+     * @param  \Instrument\Contracts\UpdatesDocuments  $updatesDocuments
      * @return \Illuminate\Http\RedirectResponse
      */
     public function update($document, UpdatesDocuments $updatesDocuments)
@@ -54,7 +54,7 @@ class DocumentController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  mixed  $document
-     * @param  \StarfolkSoftware\Instrument\Contracts\DeletesDocuments  $deletesDocuments
+     * @param  \Instrument\Contracts\DeletesDocuments  $deletesDocuments
      * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy($document, DeletesDocuments $deletesDocuments)

@@ -1,14 +1,14 @@
 <?php
 
-namespace StarfolkSoftware\Instrument\Actions;
+namespace Instrument\Actions;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Validator;
-use StarfolkSoftware\Instrument\Account;
-use StarfolkSoftware\Instrument\Contracts\CreatesAccounts;
-use StarfolkSoftware\Instrument\Events\AccountCreated;
-use StarfolkSoftware\Instrument\Events\CreatingAccount;
-use StarfolkSoftware\Instrument\Instrument;
+use Instrument\Account;
+use Instrument\Contracts\CreatesAccounts;
+use Instrument\Events\AccountCreated;
+use Instrument\Events\CreatingAccount;
+use Instrument\Instrument;
 
 class CreateAccount implements CreatesAccounts
 {
