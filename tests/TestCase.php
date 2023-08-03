@@ -5,9 +5,9 @@ namespace Instrument\Tests;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use Orchestra\Testbench\TestCase as Orchestra;
 use Instrument\InstrumentServiceProvider;
 use Instrument\Tests\Mocks\TestUser;
+use Orchestra\Testbench\TestCase as Orchestra;
 
 class TestCase extends Orchestra
 {

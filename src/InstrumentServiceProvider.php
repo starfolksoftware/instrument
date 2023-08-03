@@ -2,9 +2,9 @@
 
 namespace Instrument;
 
+use Instrument\Commands\InstallCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Instrument\Commands\InstallCommand;
 
 class InstrumentServiceProvider extends PackageServiceProvider
 {
