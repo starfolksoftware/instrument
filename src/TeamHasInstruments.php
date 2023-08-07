@@ -5,6 +5,26 @@ namespace Instrument;
 trait TeamHasInstruments
 {
     /**
+     * Get the currencies associated with the team.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function currencies()
+    {
+        return $this->hasMany(Instrument::currencyModel(), 'team_id');
+    }
+
+    /**
+     * Get the contacts associated with the team.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function contacts()
+    {
+        return $this->hasMany(Instrument::contactModel(), 'team_id');
+    }
+
+    /**
      * Get the taxes associated with the team.
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
