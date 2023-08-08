@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Instrument\Tax as InstrumentTax;
 use Instrument\Events\TaxCreated;
 use Instrument\Events\TaxDeleted;
@@ -11,6 +12,7 @@ use Instrument\Events\TaxUpdated;
 class Tax extends InstrumentTax
 {
     use HasFactory;
+    use SoftDeletes;
 
     /**
      * The table associated with the model.

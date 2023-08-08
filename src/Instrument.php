@@ -21,6 +21,11 @@ final class Instrument
     public static $runsMigrations = true;
 
     /**
+     * Indicates if Instrument supports soft deletes.
+     */
+    public static bool $softDeletes = true;
+
+    /**
      * The contact model that should be used by Ally.
      *
      * @var string
@@ -545,6 +550,16 @@ final class Instrument
     public static function supportsTeams(bool $value = true)
     {
         static::$supportsTeams = $value;
+
+        return new static();
+    }
+
+    /**
+     * Configure Instrument to support soft deletes.
+     */
+    public static function supportsSoftDeletes(bool $value = true)
+    {
+        static::$softDeletes = $value;
 
         return new static();
     }

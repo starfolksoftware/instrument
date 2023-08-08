@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Instrument\Currency as InstrumentCurrency;
 use Instrument\Events\CurrencyCreated;
 use Instrument\Events\CurrencyDeleted;
@@ -11,6 +12,7 @@ use Instrument\Events\CurrencyUpdated;
 class Currency extends InstrumentCurrency
 {
     use HasFactory;
+    use SoftDeletes;
 
     /**
      * The table associated with the model.

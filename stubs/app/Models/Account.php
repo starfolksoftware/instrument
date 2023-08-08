@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Instrument\Account as InstrumentAccount;
 use Instrument\Events\AccountCreated;
 use Instrument\Events\AccountDeleted;
@@ -11,6 +12,7 @@ use Instrument\Events\AccountUpdated;
 class Account extends InstrumentAccount
 {
     use HasFactory;
+    use SoftDeletes;
 
     /**
      * The table associated with the model.

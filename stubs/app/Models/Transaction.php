@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Instrument\Transaction as InstrumentTransaction;
 use Instrument\Events\TransactionCreated;
 use Instrument\Events\TransactionDeleted;
@@ -11,6 +12,7 @@ use Instrument\Events\TransactionUpdated;
 class Transaction extends InstrumentTransaction
 {
     use HasFactory;
+    use SoftDeletes;
 
     /**
      * The table associated with the model.

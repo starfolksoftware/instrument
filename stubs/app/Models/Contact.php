@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Instrument\Contact as InstrumentContact;
 use Instrument\Events\ContactCreated;
 use Instrument\Events\ContactDeleted;
@@ -11,6 +12,7 @@ use Instrument\Events\ContactUpdated;
 class Contact extends InstrumentContact
 {
     use HasFactory;
+    use SoftDeletes;
 
     /**
      * The table associated with the model.
