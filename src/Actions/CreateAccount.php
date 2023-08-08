@@ -37,7 +37,7 @@ class CreateAccount implements CreatesAccounts
             Instrument::findTeamByIdOrFail($teamId)->accounts()->create($fields) :
             Instrument::newAccountModel()->create($fields);
 
-        event(new AccountCreated(account: $account));
+        event(new AccountCreated(user: $user, account: $account, data: $data));
 
         return $account;
     }

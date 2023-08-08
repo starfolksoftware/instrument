@@ -32,7 +32,7 @@ class UpdateAccount implements UpdatesAccounts
             'meta',
         ])->toArray());
 
-        event(new AccountUpdated(user: $user, account: $account));
+        event(new AccountUpdated(user: $user, account: $account, data: $data));
 
         return $account->refresh();
     }
