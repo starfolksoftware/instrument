@@ -13,7 +13,7 @@ abstract class Transaction extends Model
      */
     public function team()
     {
-        return $this->belongsTo(Instrument::$teamModel, 'team_id');
+        return $this->belongsTo(Instrument::teamModel(), 'team_id');
     }
 
     /**
@@ -23,7 +23,7 @@ abstract class Transaction extends Model
      */
     public function account()
     {
-        return $this->belongsTo(Instrument::$accountModel, 'account_id');
+        return $this->belongsTo(Instrument::accountModel(), 'account_id');
     }
 
     /**
@@ -33,7 +33,7 @@ abstract class Transaction extends Model
      */
     public function document()
     {
-        return $this->belongsTo(Instrument::$documentModel, 'document_id');
+        return $this->belongsTo(Instrument::documentModel(), 'document_id');
     }
 
     /**

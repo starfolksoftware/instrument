@@ -13,7 +13,7 @@ abstract class Document extends Model
      */
     public function team()
     {
-        return $this->belongsTo(Instrument::$teamModel, 'team_id');
+        return $this->belongsTo(Instrument::teamModel(), 'team_id');
     }
 
     /**
@@ -23,6 +23,6 @@ abstract class Document extends Model
      */
     public function transactions()
     {
-        return $this->hasMany(Instrument::$transactionModel, 'document_id');
+        return $this->hasMany(Instrument::transactionModel(), 'document_id');
     }
 }
