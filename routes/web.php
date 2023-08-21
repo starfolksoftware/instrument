@@ -46,6 +46,14 @@ Route::group([
             'destroy' => config('instrument.route_names.accounts.destroy', 'accounts.destroy'),
         ]);
 
+    Route::resource('payment-methods', Controllers\PaymentMethodController::class)
+        ->only(['store', 'update', 'destroy'])
+        ->names([
+            'store' => config('instrument.route_names.payment-methods.store', 'payment-methods.store'),
+            'update' => config('instrument.route_names.payment-methods.update', 'payment-methods.update'),
+            'destroy' => config('instrument.route_names.payment-methods.destroy', 'payment-methods.destroy'),
+        ]);
+
     Route::resource('transactions', Controllers\TransactionController::class)
         ->only(['store', 'update', 'destroy'])
         ->names([

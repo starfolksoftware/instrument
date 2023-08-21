@@ -7,6 +7,7 @@ use App\Models\Currency;
 use App\Models\Document;
 use App\Models\Tax;
 use App\Models\Transaction;
+use App\Models\PaymentMethod;
 use Illuminate\Support\ServiceProvider;
 use Instrument\Instrument;
 
@@ -38,5 +39,7 @@ class InstrumentServiceProvider extends ServiceProvider
         Instrument::useCurrencyModel(Currency::class);
 
         Instrument::useTransactionModel(Transaction::class);
+
+        Instrument::usePaymentMethodModel(PaymentMethod::class);
     }
 }

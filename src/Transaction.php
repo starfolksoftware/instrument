@@ -37,6 +37,16 @@ abstract class Transaction extends Model
     }
 
     /**
+     * The payment method that owns the transaction.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function paymentMethod()
+    {
+        return $this->belongsTo(Instrument::paymentMethodModel(), 'payment_method_id');
+    }
+
+    /**
      * Scope a query to only include transactions for the given payment method.
      *
      * @param  \Illuminate\Database\Eloquent\Builder  $query

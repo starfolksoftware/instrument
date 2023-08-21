@@ -59,6 +59,13 @@ final class Instrument
     public static $accountModel = 'App\\Models\\Account';
 
     /**
+     * The payment method model that should be used by Instrument.
+     *
+     * @var string
+     */
+    public static $paymentMethodModel = 'App\\Models\\PaymentMethod';
+
+    /**
      * The transaction model that should be used by Instrument.
      *
      * @var string
@@ -515,6 +522,74 @@ final class Instrument
     public static function deleteTransactionsUsing(string $class)
     {
         app()->singleton(Contracts\DeletesTransactions::class, $class);
+    }
+
+    /**
+     * Get the name of the payment method model used by the application.
+     *
+     * @return string
+     */
+    public static function paymentMethodModel()
+    {
+        return static::$paymentMethodModel;
+    }
+
+    /**
+     * Get a new instance of the payment method model.
+     *
+     * @return mixed
+     */
+    public static function newPaymentMethodModel()
+    {
+        $model = static::paymentMethodModel();
+
+        return new $model();
+    }
+
+    /**
+     * Specify the payment method model that should be used by Instrument.
+     *
+     * @param  string  $model
+     * @return static
+     */
+    public static function usePaymentMethodModel(string $model)
+    {
+        static::$paymentMethodModel = $model;
+
+        return new static();
+    }
+
+    /**
+     * Register a class / callback that should be used to create payment methods.
+     *
+     * @param  string  $class
+     * @return void
+     */
+    public static function createPaymentMethodsUsing(string $class)
+    {
+        app()->singleton(Contracts\CreatesPaymentMethods::class, $class);
+    }
+
+    /**
+     * Register a class / callback that should be used to update payment methods.
+     *
+     * @param  string  $class
+     * @return void
+     */
+    public static function updatePaymentMethodsUsing(string $class)
+    {
+        app()->singleton(Contracts\UpdatesPaymentMethods::class, $class);
+    }
+
+    /**
+     * Register a class / callback that should be used to delete payment methods.
+     *
+     * @param  string  $class
+     * @return void
+     */
+    public static function deletePaymentMethodsUsing(string $class)
+    {
+        app()->singleton(Contracts\DeletesPaymentMethods::class, $class);
     }
 
     /**

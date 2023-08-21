@@ -5,6 +5,7 @@ use Instrument\Tests\Mocks\Account;
 use Instrument\Tests\Mocks\Contact;
 use Instrument\Tests\Mocks\Currency;
 use Instrument\Tests\Mocks\Document;
+use Instrument\Tests\Mocks\PaymentMethod;
 use Instrument\Tests\Mocks\Tax;
 use Instrument\Tests\Mocks\Transaction;
 use Instrument\Tests\TestCase;
@@ -79,4 +80,14 @@ function contactFields()
 function currencyFields()
 {
     return Currency::factory()->raw();
+}
+
+/**
+ * Returns payment method fields.
+ * 
+ * @return array
+ */
+function paymentMethodFields()
+{
+    return PaymentMethod::factory()->raw();
 }

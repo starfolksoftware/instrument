@@ -66,5 +66,11 @@ class InstrumentServiceProvider extends PackageServiceProvider
         Instrument::updateContactsUsing(Actions\UpdateContact::class);
 
         Instrument::deleteContactsUsing(Actions\DeleteContact::class);
+
+        Instrument::createPaymentMethodsUsing(Actions\CreatePaymentMethod::class);
+
+        Instrument::updatePaymentMethodsUsing(Actions\UpdatePaymentMethod::class);
+
+        Instrument::deletePaymentMethodsUsing(Actions\DeletePaymentMethod::class);
     }
 }

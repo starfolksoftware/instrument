@@ -29,6 +29,11 @@ return [
             'update' => null,
             'destroy' => '/',
         ],
+        'payment-methods' => [
+            'store' => null,
+            'update' => null,
+            'destroy' => '/',
+        ],
         'transactions' => [
             'store' => null,
             'update' => null,
@@ -61,6 +66,11 @@ return [
             'store' => 'accounts.store',
             'update' => 'accounts.update',
             'destroy' => 'accounts.destroy',
+        ],
+        'payment-methods' => [
+            'store' => 'payment-methods.store',
+            'update' => 'payment-methods.update',
+            'destroy' => 'payment-methods.destroy',
         ],
         'transactions' => [
             'store' => 'transactions.store',

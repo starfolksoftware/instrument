@@ -22,6 +22,7 @@ class CreateTransaction implements CreatesTransactions
         Validator::make($data, [
             'account_id' => 'nullable|exists:accounts,id',
             'document_id' => 'nullable|exists:documents,id',
+            'payment_method_id' => 'nullable|exists:payment_methods,id',
             'amount' => 'required|numeric|min:0',
             'payment_method' => 'required|string',
             'paid_at' => 'required|date:Y-m-d',

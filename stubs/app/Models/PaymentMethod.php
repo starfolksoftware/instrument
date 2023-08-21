@@ -4,12 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Instrument\Transaction as InstrumentTransaction;
-use Instrument\Events\TransactionCreated;
-use Instrument\Events\TransactionDeleted;
-use Instrument\Events\TransactionUpdated;
+use Instrument\PaymentMethod as InstrumentPaymentMethod;
+use Instrument\Events\PaymentMethodCreated;
+use Instrument\Events\PaymentMethodDeleted;
+use Instrument\Events\PaymentMethodUpdated;
 
-class Transaction extends InstrumentTransaction
+class PaymentMethod extends InstrumentPaymentMethod
 {
     use HasFactory;
     use SoftDeletes;
@@ -19,7 +19,7 @@ class Transaction extends InstrumentTransaction
      *
      * @var string
      */
-    protected $table = 'transactions';
+    protected $table = 'payment_methods';
 
     /**
      * The attributes that are mass assignable.
@@ -27,13 +27,8 @@ class Transaction extends InstrumentTransaction
      * @var string[]
      */
     protected $fillable = [
-        'account_id',
-        'document_id',
-        'payment_method_id',
-        'amount',
-        'payment_method',
-        'paid_at',
-        'meta'
+        'name',
+        'meta',
     ];
 
     /**
@@ -42,8 +37,6 @@ class Transaction extends InstrumentTransaction
      * @var array<string, string>
      */
     protected $casts = [
-        'amount' => 'double',
-        'paid_at' => 'datetime',
         'meta' => 'array',
     ];
 
@@ -53,8 +46,8 @@ class Transaction extends InstrumentTransaction
      * @var array
      */
     protected $dispatchesEvents = [
-        'created' => TransactionCreated::class,
-        'updated' => TransactionUpdated::class,
-        'deleted' => TransactionDeleted::class,
+        'created' => PaymentMethodCreated::class,
+        'updated' => PaymentMethodUpdated::class,
+        'deleted' => PaymentMethodDeleted::class,
     ];
 }
