@@ -15,6 +15,7 @@ return new class extends Migration
             $table->string('type');
             $table->string('name');
             $table->json('meta');
+            $table->boolean('enabled')->default(true);
             $table->timestamps();
 
             if (Instrument::$softDeletes) {
@@ -35,6 +36,7 @@ return new class extends Migration
             $table->string('type')->nullable();
             $table->string('name');
             $table->double('rate', 15, 8, true);
+            $table->boolean('enabled')->default(true);
             $table->timestamps();
 
             if (Instrument::$softDeletes) {
@@ -112,6 +114,7 @@ return new class extends Migration
 
             $table->json('meta')->nullable();
 
+            $table->boolean('enabled')->default(true);
             $table->timestamps();
 
             if (Instrument::$softDeletes) {
@@ -124,6 +127,7 @@ return new class extends Migration
             $table->unsignedBigInteger('team_id')->nullable();
             $table->string('name');
             $table->json('meta')->nullable();
+            $table->boolean('enabled')->default(true);
             $table->timestamps();
 
             if (Instrument::$softDeletes) {
