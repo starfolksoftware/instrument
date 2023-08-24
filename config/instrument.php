@@ -39,6 +39,11 @@ return [
             'update' => null,
             'destroy' => '/',
         ],
+        'reports' => [
+            'store' => null,
+            'update' => null,
+            'destroy' => '/',
+        ],
     ],
 
     'route_names' => [
@@ -77,5 +82,54 @@ return [
             'update' => 'transactions.update',
             'destroy' => 'transactions.destroy',
         ],
+        'reports' => [
+            'store' => 'reports.store',
+            'update' => 'reports.update',
+            'destroy' => 'reports.destroy',
+        ],
+    ],
+
+    /*
+     * The types
+     */
+    'report_types' => [
+        'expense' => Expense::class,
+        'income' => Income::class,
+        'profit_and_loss' => ProfitLoss::class,
+        'tax' => Tax::class,
+    ],
+
+    /**
+     * Group Options.
+     */
+    'report_groups' => [
+        'category',
+        'customer',
+        'item',
+    ],
+
+    /**
+     * Period Options.
+     */
+    'report_periods' => [
+        'monthly',
+        'quarterly',
+        'yearly',
+    ],
+
+    /**
+     * Basis Options.
+     */
+    'report_accounting_basis' => [
+        'cash',
+        'accrual',
+    ],
+
+    /**
+     * Chart Options.
+     */
+    'report_charts' => [
+        // 'none',
+        // 'line',
     ],
 ];

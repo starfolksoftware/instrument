@@ -72,5 +72,11 @@ class InstrumentServiceProvider extends PackageServiceProvider
         Instrument::updatePaymentMethodsUsing(Actions\UpdatePaymentMethod::class);
 
         Instrument::deletePaymentMethodsUsing(Actions\DeletePaymentMethod::class);
+
+        Instrument::createReportsUsing(Actions\CreateReport::class);
+
+        Instrument::updateReportsUsing(Actions\UpdateReport::class);
+
+        Instrument::deleteReportsUsing(Actions\DeleteReport::class);
     }
 }

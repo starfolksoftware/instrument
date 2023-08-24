@@ -8,6 +8,7 @@ use App\Models\Document;
 use App\Models\Tax;
 use App\Models\Transaction;
 use App\Models\PaymentMethod;
+use App\Models\Report;
 use Illuminate\Support\ServiceProvider;
 use Instrument\Instrument;
 
@@ -41,5 +42,7 @@ class InstrumentServiceProvider extends ServiceProvider
         Instrument::useTransactionModel(Transaction::class);
 
         Instrument::usePaymentMethodModel(PaymentMethod::class);
+
+        Instrument::useReportModel(Report::class);
     }
 }

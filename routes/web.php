@@ -61,4 +61,12 @@ Route::group([
             'update' => config('instrument.route_names.transactions.update', 'transactions.update'),
             'destroy' => config('instrument.route_names.transactions.destroy', 'transactions.destroy'),
         ]);
+
+    Route::resource('reports', Controllers\ReportController::class)
+        ->only(['store', 'update', 'destroy'])
+        ->names([
+            'store' => config('instrument.route_names.reports.store', 'reports.store'),
+            'update' => config('instrument.route_names.reports.update', 'reports.update'),
+            'destroy' => config('instrument.route_names.reports.destroy', 'reports.destroy'),
+        ]);
 });

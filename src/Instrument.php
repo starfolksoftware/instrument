@@ -3,6 +3,7 @@
 namespace Instrument;
 
 use Illuminate\Database\Eloquent\Model;
+use NumberFormatter;
 
 final class Instrument
 {
@@ -71,6 +72,13 @@ final class Instrument
      * @var string
      */
     public static $transactionModel = 'App\\Models\\Transaction';
+
+    /**
+     * The report model that should be used by Instrument.
+     *
+     * @var string
+     */
+    public static $reportModel = 'App\\Models\\Report';
 
     /**
      * Indicates if Instrument should support teams.
@@ -590,6 +598,79 @@ final class Instrument
     public static function deletePaymentMethodsUsing(string $class)
     {
         app()->singleton(Contracts\DeletesPaymentMethods::class, $class);
+    }
+
+    /**
+     * Get the name of the report model used by the application.
+     *
+     * @return string
+     */
+    public static function reportModel()
+    {
+        return static::$reportModel;
+    }
+
+    /**
+     * Get a new instance of the report model.
+     *
+     * @return mixed
+     */
+    public static function newReportModel()
+    {
+        $model = static::reportModel();
+
+        return new $model();
+    }
+
+    /**
+     * Specify the report model that should be used by Instrument.
+     *
+     * @param  string  $model
+     * @return static
+     */
+    public static function useReportModel(string $model)
+    {
+        static::$reportModel = $model;
+
+        return new static();
+    }
+
+    /**
+     * Register a class / callback that should be used to create reports.
+     *
+     * @param  string  $class
+     * @return void
+     */
+    public static function createReportsUsing(string $class)
+    {
+        app()->singleton(Contracts\CreatesReports::class, $class);
+    }
+
+    /**
+     * Register a class / callback that should be used to update reports.
+     *
+     * @param  string  $class
+     * @return void
+     */
+    public static function updateReportsUsing(string $class)
+    {
+        app()->singleton(Contracts\UpdatesReports::class, $class);
+    }
+
+    /**
+     * Register a class / callback that should be used to delete reports.
+     *
+     * @param  string  $class
+     * @return void
+     */
+    public static function deleteReportsUsing(string $class)
+    {
+        app()->singleton(Contracts\DeletesReports::class, $class);
+    }
+
+    public static function money(float $amount, string $currency = 'NGN')
+    {
+        return (new NumberFormatter("en_NG", NumberFormatter::CURRENCY))->formatCurrency($amount, $currency);
     }
 
     /**

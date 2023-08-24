@@ -63,4 +63,24 @@ trait TeamHasInstruments
     {
         return $this->hasMany(Instrument::transactionModel(), 'team_id');
     }
+
+    /**
+     * Get the payment methods for the team.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function paymentMethods()
+    {
+        return $this->hasMany(Instrument::paymentMethodModel(), 'team_id');
+    }
+
+    /**
+     * Get the reports for the team.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function reports()
+    {
+        return $this->hasMany(Instrument::reportModel(), 'team_id');
+    }
 }
