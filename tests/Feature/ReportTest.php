@@ -1,11 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Event;
+use Instrument\Events\CreatingReport;
+use Instrument\Events\DeletingReport;
 use Instrument\Events\ReportCreated;
 use Instrument\Events\ReportDeleted;
 use Instrument\Events\ReportUpdated;
-use Instrument\Events\CreatingReport;
-use Instrument\Events\DeletingReport;
 use Instrument\Events\UpdatingReport;
 use Instrument\Tests\Mocks\Report;
 use Instrument\Tests\Mocks\TestUser;

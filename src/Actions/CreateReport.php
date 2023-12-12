@@ -4,11 +4,11 @@ namespace Instrument\Actions;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Validator;
-use Instrument\Report;
 use Instrument\Contracts\CreatesReports;
-use Instrument\Events\ReportCreated;
 use Instrument\Events\CreatingReport;
+use Instrument\Events\ReportCreated;
 use Instrument\Instrument;
+use Instrument\Report;
 
 class CreateReport implements CreatesReports
 {

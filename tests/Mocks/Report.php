@@ -3,10 +3,10 @@
 namespace Instrument\Tests\Mocks;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Instrument\Report as InstrumentReport;
 use Instrument\Events\ReportCreated;
 use Instrument\Events\ReportDeleted;
 use Instrument\Events\ReportUpdated;
+use Instrument\Report as InstrumentReport;
 
 class Report extends InstrumentReport
 {
@@ -25,9 +25,9 @@ class Report extends InstrumentReport
      * @var string[]
      */
     protected $fillable = [
-        'type', 
-        'name', 
-        'description', 
+        'type',
+        'name',
+        'description',
         'settings',
     ];
 

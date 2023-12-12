@@ -4,11 +4,11 @@ namespace Instrument\Actions;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Validator;
-use Instrument\PaymentMethod;
 use Instrument\Contracts\CreatesPaymentMethods;
-use Instrument\Events\PaymentMethodCreated;
 use Instrument\Events\CreatingPaymentMethod;
+use Instrument\Events\PaymentMethodCreated;
 use Instrument\Instrument;
+use Instrument\PaymentMethod;
 
 class CreatePaymentMethod implements CreatesPaymentMethods
 {

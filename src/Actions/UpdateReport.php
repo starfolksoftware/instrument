@@ -4,10 +4,10 @@ namespace Instrument\Actions;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Validator;
-use Instrument\Report;
 use Instrument\Contracts\UpdatesReports;
 use Instrument\Events\ReportUpdated;
 use Instrument\Events\UpdatingReport;
+use Instrument\Report;
 
 class UpdateReport implements UpdatesReports
 {

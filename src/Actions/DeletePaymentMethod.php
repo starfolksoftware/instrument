@@ -3,10 +3,10 @@
 namespace Instrument\Actions;
 
 use Illuminate\Database\Eloquent\Model;
-use Instrument\PaymentMethod;
 use Instrument\Contracts\DeletesPaymentMethods;
-use Instrument\Events\PaymentMethodDeleted;
 use Instrument\Events\DeletingPaymentMethod;
+use Instrument\Events\PaymentMethodDeleted;
+use Instrument\PaymentMethod;
 
 class DeletePaymentMethod implements DeletesPaymentMethods
 {

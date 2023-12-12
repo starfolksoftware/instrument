@@ -1,11 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Event;
+use Instrument\Events\CreatingPaymentMethod;
+use Instrument\Events\DeletingPaymentMethod;
 use Instrument\Events\PaymentMethodCreated;
 use Instrument\Events\PaymentMethodDeleted;
 use Instrument\Events\PaymentMethodUpdated;
-use Instrument\Events\CreatingPaymentMethod;
-use Instrument\Events\DeletingPaymentMethod;
 use Instrument\Events\UpdatingPaymentMethod;
 use Instrument\Tests\Mocks\PaymentMethod;
 use Instrument\Tests\Mocks\TestUser;

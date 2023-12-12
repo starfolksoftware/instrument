@@ -3,10 +3,10 @@
 namespace Instrument\Actions;
 
 use Illuminate\Database\Eloquent\Model;
-use Instrument\Report;
 use Instrument\Contracts\DeletesReports;
-use Instrument\Events\ReportDeleted;
 use Instrument\Events\DeletingReport;
+use Instrument\Events\ReportDeleted;
+use Instrument\Report;
 
 class DeleteReport implements DeletesReports
 {

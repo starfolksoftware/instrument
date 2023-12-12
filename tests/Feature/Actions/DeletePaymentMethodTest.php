@@ -2,8 +2,8 @@
 
 use Illuminate\Support\Facades\Event;
 use Instrument\Contracts\DeletesPaymentMethods;
-use Instrument\Events\PaymentMethodDeleted;
 use Instrument\Events\DeletingPaymentMethod;
+use Instrument\Events\PaymentMethodDeleted;
 use Instrument\Tests\Mocks\PaymentMethod;
 use Instrument\Tests\Mocks\TestUser;
 

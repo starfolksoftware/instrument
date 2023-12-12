@@ -3,10 +3,10 @@
 namespace Instrument\Tests\Mocks;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Instrument\PaymentMethod as InstrumentPaymentMethod;
 use Instrument\Events\PaymentMethodCreated;
 use Instrument\Events\PaymentMethodDeleted;
 use Instrument\Events\PaymentMethodUpdated;
+use Instrument\PaymentMethod as InstrumentPaymentMethod;
 
 class PaymentMethod extends InstrumentPaymentMethod
 {

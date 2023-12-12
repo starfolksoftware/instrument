@@ -33,7 +33,7 @@ trait InteractsWithReport
 
     /**
      * Get the financial start date.
-     * 
+     *
      * @param mixed $year
      * @return \Carbon\Carbon|false
      */
@@ -44,8 +44,8 @@ trait InteractsWithReport
 
         $setting = explode('-', auth()->user()->currentTeam->reportSettings()->financial_start);
 
-        $day = !empty($setting[0]) ? $setting[0] : $start->day;
-        $month = !empty($setting[1]) ? $setting[1] : $start->month;
+        $day = ! empty($setting[0]) ? $setting[0] : $start->day;
+        $month = ! empty($setting[1]) ? $setting[1] : $start->month;
         $year = $year ?? request('year', $now->year);
 
         $financialStart = Carbon::create($year, $month, $day);

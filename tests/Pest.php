@@ -85,7 +85,7 @@ function currencyFields()
 
 /**
  * Returns payment method fields.
- * 
+ *
  * @return array
  */
 function paymentMethodFields()
@@ -95,7 +95,7 @@ function paymentMethodFields()
 
 /**
  * Returns report fields.
- * 
+ *
  * @return array
  */
 function reportFields()

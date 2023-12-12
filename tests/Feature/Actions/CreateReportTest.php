@@ -2,8 +2,8 @@
 
 use Illuminate\Support\Facades\Event;
 use Instrument\Contracts\CreatesReports;
-use Instrument\Events\ReportCreated;
 use Instrument\Events\CreatingReport;
+use Instrument\Events\ReportCreated;
 use Instrument\Tests\Mocks\Report;
 use Instrument\Tests\Mocks\TestUser;
 

@@ -18,77 +18,77 @@ abstract class Report
 
     /**
      * The report's default name.
-     * 
+     *
      * @var string
      */
     public string $name = '';
 
     /**
      * Indicates whether the report has money.
-     * 
+     *
      * @var bool
      */
     public bool $hasMoney = false;
 
     /**
      * The report's year.
-     * 
+     *
      * @var int
      */
     public int $year;
 
     /**
      * The report's tables.
-     * 
+     *
      * @var array
      */
     public array $tables = [];
 
     /**
      * The report's dates.
-     * 
+     *
      * @var array
      */
     public array $dates = [];
 
     /**
      * The report's row names.
-     * 
+     *
      * @var array
      */
     public array $rowNames = [];
 
     /**
      * The report's row values.
-     * 
+     *
      * @var array
      */
     public array $rowValues = [];
 
     /**
      * The report's footer totals.
-     * 
+     *
      * @var array
      */
     public array $footerTotals = [];
 
     /**
      * The report's groups.
-     * 
+     *
      * @var array
      */
     public array $groups = [];
 
     /**
      * The report's filters.
-     * 
+     *
      * @var array
      */
     public array $filters = [];
 
     /**
      * Indicates report has been loaded.
-     * 
+     *
      * @var bool
      */
     public bool $loaded = false;
@@ -99,7 +99,7 @@ abstract class Report
     public function __construct(bool $loadData = true)
     {
         $this->setGroups();
-        
+
         $this->model = Instrument::reportModel();
 
         if ($loadData) {
@@ -109,14 +109,14 @@ abstract class Report
 
     /**
      * Sets the report's data.
-     * 
+     *
      * @return void
      */
     abstract public function setData();
 
     /**
      * Hydrates the report.
-     * 
+     *
      * @return void
      */
     public function load()
@@ -133,7 +133,7 @@ abstract class Report
 
     /**
      * Loads the report's data.
-     * 
+     *
      * @return void
      */
     public function loadData()
@@ -143,7 +143,7 @@ abstract class Report
 
     /**
      * Gets the default name of the report.
-     * 
+     *
      * @return string
      */
     public function getName(): string
@@ -153,16 +153,16 @@ abstract class Report
 
     /**
      * Get's grand total.
-     * 
+     *
      * @return string
      */
     public function getGrandTotal(): string
     {
-        if (!$this->loaded) {
+        if (! $this->loaded) {
             $this->load();
         }
 
-        if (!empty($this->footerTotals)) {
+        if (! empty($this->footerTotals)) {
             $sum = 0;
 
             foreach ($this->footerTotals as $total) {
@@ -179,7 +179,7 @@ abstract class Report
 
     /**
      * Sets the report's year.
-     * 
+     *
      * @return void
      */
     public function setYear()
@@ -189,7 +189,7 @@ abstract class Report
 
     /**
      * Sets the report's tables.
-     * 
+     *
      * @return void
      */
     public function setTables()
@@ -201,7 +201,7 @@ abstract class Report
 
     /**
      * Get's a reports setting by key.
-     * 
+     *
      * @param string $name
      * @param mixed $default
      * @return mixed
@@ -213,7 +213,7 @@ abstract class Report
 
     /**
      * Get the report's financial year.
-     * 
+     *
      * @param mixed $year
      * @return \Carbon\CarbonPeriod
      */
@@ -226,7 +226,7 @@ abstract class Report
 
     /**
      * Get the report's financial quarter.
-     * 
+     *
      * @param mixed $year
      * @return \Carbon\CarbonPeriod
      */
@@ -244,12 +244,12 @@ abstract class Report
 
     /**
      * Sets the report's dates.
-     * 
+     *
      * @return void
      */
     public function setDates()
     {
-        if (!$period = $this->getSetting('period')) {
+        if (! $period = $this->getSetting('period')) {
             return;
         }
 
@@ -289,28 +289,28 @@ abstract class Report
 
     /**
      * Sets filters.
-     * 
+     *
      * @return void
      */
     abstract public function setFilters();
 
     /**
      * Sets groups.
-     * 
+     *
      * @return void
      */
     abstract public function setGroups();
 
     /**
      * Sets rows.
-     * 
+     *
      * @return void
      */
     abstract public function setRows();
 
     /**
      * Sets totals.
-     * 
+     *
      * @param mixed $items
      * @param string $dateField
      * @param bool $checkType
@@ -328,16 +328,16 @@ abstract class Report
 
             $date = $this->getFormattedDate(Carbon::parse($item->$dateField));
 
-            if (!isset($item->$groupField)) {
+            if (! isset($item->$groupField)) {
                 continue;
             }
 
             $group = $item->$groupField;
 
             if (
-                !isset($this->rowValues[$table][$group])
-                || !isset($this->rowValues[$table][$group][$date])
-                || !isset($this->footerTotals[$table][$date])
+                ! isset($this->rowValues[$table][$group])
+                || ! isset($this->rowValues[$table][$group][$date])
+                || ! isset($this->footerTotals[$table][$date])
             ) {
                 continue;
             }
@@ -360,7 +360,7 @@ abstract class Report
 
     /**
      * Sets the report's arithmetic totals.
-     * 
+     *
      * @param array $items
      * @param string $dateField
      * @param string $operator
@@ -380,16 +380,16 @@ abstract class Report
 
             $date = $this->getFormattedDate(Carbon::parse($item->$dateField));
 
-            if (!isset($item->$groupField)) {
+            if (! isset($item->$groupField)) {
                 continue;
             }
 
             $group = $item->$groupField;
 
             if (
-                !isset($this->rowValues[$table][$group])
-                || !isset($this->rowValues[$table][$group][$date])
-                || !isset($this->footerTotals[$table][$date])
+                ! isset($this->rowValues[$table][$group])
+                || ! isset($this->rowValues[$table][$group][$date])
+                || ! isset($this->footerTotals[$table][$date])
             ) {
                 continue;
             }
@@ -403,7 +403,7 @@ abstract class Report
 
     /**
      * Adds an arithmetic amount to a value.
-     * 
+     *
      * @param mixed $current
      * @param mixed $amount
      * @return void
@@ -415,7 +415,7 @@ abstract class Report
 
     /**
      * Subtracts an arithmetic amount to a value.
-     * 
+     *
      * @param mixed $current
      * @param mixed $amount
      * @return void
@@ -427,7 +427,7 @@ abstract class Report
 
     /**
      * Multplies an arithmetic amount to a value.
-     * 
+     *
      * @param mixed $current
      * @param mixed $amount
      * @return void
@@ -439,7 +439,7 @@ abstract class Report
 
     /**
      * Divides an arithmetic amount to a value.
-     * 
+     *
      * @param mixed $current
      * @param mixed $amount
      * @return void
@@ -451,7 +451,7 @@ abstract class Report
 
     /**
      * Mod an arithmetic amount to a value.
-     * 
+     *
      * @param mixed $current
      * @param mixed $amount
      * @return void
@@ -463,7 +463,7 @@ abstract class Report
 
     /**
      * Expo an arithmetic amount to a value.
-     * 
+     *
      * @param mixed $current
      * @param mixed $amount
      * @return void
@@ -475,21 +475,21 @@ abstract class Report
 
     /**
      * Apply filters.
-     * 
+     *
      * @return mixed
      */
     abstract public function applyFilters($model, $args = []);
 
     /**
      * Apply filters.
-     * 
+     *
      * @return mixed
      */
     abstract public function applyGroups($model, $args = []);
 
     /**
      * Gets the report's formatted date.
-     * 
+     *
      * @param \Carbon\Carbon $date
      * @return null|string
      */
@@ -536,7 +536,7 @@ abstract class Report
 
     /**
      * Gets the report's monthly date format.
-     * 
+     *
      * @param mixed $year
      * @return string
      */
@@ -549,7 +549,7 @@ abstract class Report
 
     /**
      * Gets the report's quaterly date format.
-     * 
+     *
      * @param mixed $year
      * @return string
      */
@@ -562,7 +562,7 @@ abstract class Report
 
     /**
      * Gets the report's yearly date format.
-     * 
+     *
      * @param mixed $year
      * @return string
      */
@@ -575,7 +575,7 @@ abstract class Report
 
     /**
      * Gets years.
-     * 
+     *
      * @return array
      */
     public function getYears()
@@ -595,7 +595,7 @@ abstract class Report
 
     /**
      * Applies date filter.
-     * 
+     *
      * @param mixed $model
      * @param array $args
      * @return void
@@ -607,7 +607,7 @@ abstract class Report
 
     /**
      * Applies account group.
-     * 
+     *
      * @param mixed $model
      * @return void
      */
@@ -622,7 +622,7 @@ abstract class Report
         $model->account_id = 0;
 
         foreach ($model->transactions as $transaction) {
-            if (!empty($filter) && !in_array($transaction->account_id, $filter)) {
+            if (! empty($filter) && ! in_array($transaction->account_id, $filter)) {
                 continue;
             }
 
@@ -634,7 +634,7 @@ abstract class Report
 
     /**
      * Applies customer group.
-     * 
+     *
      * @param mixed $model
      * @param array $args
      * @return void
@@ -650,7 +650,7 @@ abstract class Report
 
     /**
      * Applies vendor group.
-     * 
+     *
      * @param mixed $model
      * @return void
      */
@@ -665,7 +665,7 @@ abstract class Report
 
     /**
      * Set row names and values.
-     * 
+     *
      * @param array $rows
      * @return void
      */

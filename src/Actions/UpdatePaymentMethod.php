@@ -4,10 +4,10 @@ namespace Instrument\Actions;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Validator;
-use Instrument\PaymentMethod;
 use Instrument\Contracts\UpdatesPaymentMethods;
 use Instrument\Events\PaymentMethodUpdated;
 use Instrument\Events\UpdatingPaymentMethod;
+use Instrument\PaymentMethod;
 
 class UpdatePaymentMethod implements UpdatesPaymentMethods
 {

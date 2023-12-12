@@ -2,8 +2,8 @@
 
 use Illuminate\Support\Facades\Event;
 use Instrument\Contracts\DeletesReports;
-use Instrument\Events\ReportDeleted;
 use Instrument\Events\DeletingReport;
+use Instrument\Events\ReportDeleted;
 use Instrument\Tests\Mocks\Report;
 use Instrument\Tests\Mocks\TestUser;
 

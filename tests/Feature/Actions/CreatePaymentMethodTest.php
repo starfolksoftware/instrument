@@ -2,8 +2,8 @@
 
 use Illuminate\Support\Facades\Event;
 use Instrument\Contracts\CreatesPaymentMethods;
-use Instrument\Events\PaymentMethodCreated;
 use Instrument\Events\CreatingPaymentMethod;
+use Instrument\Events\PaymentMethodCreated;
 use Instrument\Tests\Mocks\PaymentMethod;
 use Instrument\Tests\Mocks\TestUser;
 
